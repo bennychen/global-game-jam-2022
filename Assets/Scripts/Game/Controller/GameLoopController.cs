@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections;
 using System.Data;
 using System.Text;
 using Codeplay;
@@ -26,9 +27,10 @@ namespace Game
             GameLoopStateMachine.AddState(new FirstEnterGameState());
             GameLoopStateMachine.AddState(new CharacterEnterState());
             GameLoopStateMachine.AddState(new CharacterAwaitState());
+            GameLoopStateMachine.AddState(new CharacterLeaveState());
             GameLoopStateMachine.AddState(new ChangeNextDayState());
 
-            ChangeToFirstEnterGame();
+            //ChangeToFirstEnterGame();
             ResetLevelModel();
             // GameStateMachine.OnStateChanged += OnGameStateChanged;
         }
@@ -58,6 +60,16 @@ namespace Game
         {
             GameLoopStateMachine.ChangeState<ChangeNextDayState>();
         }
+
+        public void PlayerJudgeToHeaven()
+        {
+            PlayerJudge(true);
+        }
+        
+        public void PlayerJudgeToHell()
+        {
+            PlayerJudge(false);
+        }
         
         public void PlayerJudge(bool toHeaven)
         {
@@ -65,32 +77,71 @@ namespace Game
             var meetRule = MeetRule(character, toHeaven);
             if (meetRule)
             {
+                Debug.Log("正确");
                 LevelModel.CorrectScore++;
-                if (!toHeaven && character.Ethics == EthicsType.Good)
+                if (!toHeaven && character.Ethics == EthicsType.Evil)
                 {
+                    Debug.Log("正确但不道德");
                     LevelModel.CorrectButNotEthicsScore++;
                 }
             }
             else
             {
+                Debug.Log("错误");
                 LevelModel.CorrectScore--;
                 LevelModel.HP--;
                 if (toHeaven && character.Ethics == EthicsType.Good)
                 {
+                    Debug.Log("错误但道德");
                     LevelModel.EthicsButMistakeScore++;
                 }
+                
+            }
+
+            if (toHeaven)
+            {
+                GameController.Instance.SendMessage("CharacterDialog", character.RewardDialog);
+            }
+            else
+            {
+                GameController.Instance.SendMessage("CharacterDialog", character.PenaltyDialog);
             }
 
             LevelModel.CurrentJudgeToHeaven = toHeaven;
 
             
             GameLoopStateMachine.ChangeState<CharacterLeaveState>();
+            StartCoroutine(AwaitToNext());
+        }
+
+        private IEnumerator AwaitToNext()
+        {
+            // 动画播完之后
+            yield return new WaitForSeconds(1);
+            ChangeNextCharacter();
+        }
+
+        public void ChangeNextCharacter()
+        {
+            LevelModel.CurrentCharacterIndex++;
+            if (LevelModel.CurrentCharacterIndex >= LevelModel.CurrentLevel.CharacterList.Count)
+            {
+                GameLoopStateMachine.ChangeState<ChangeNextDayState>();
+            }
+            else
+            {
+                GameLoopStateMachine.ChangeState<CharacterEnterState>();
+            }
         }
 
         private bool MeetRule(CharacterData character, bool toHeaven)
         {
-            // TODO no rule
-            return true;
+            var result = true;
+            foreach (var currentRule in LevelModel.CurrentRule)
+            {
+                result &= currentRule.IsMeet(character);
+            }
+            return result == toHeaven;
         }
 
         public void DialogCurrentRule()
@@ -129,6 +180,11 @@ namespace Game
             {
                 var randomIndex = Random.Range(0, GameController.Instance.ConfigData.AllRule.Count);
                 LevelModel.CurrentRule.Add(GameController.Instance.ConfigData.AllRule[randomIndex]);
+            }
+
+            foreach (var rule in LevelModel.CurrentRule)
+            {
+                Debug.Log("current rule:" + rule.Description);
             }
         }
     }

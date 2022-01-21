@@ -11,7 +11,7 @@ namespace Game
         // public int CharacterAmount = 3;
         public List<int> CharacterList = new List<int>();
         // <0 is random
-        public List<int> RuleIndex = new List<int>();
+        // public List<int> RuleIndex = new List<int>();
         
         
         

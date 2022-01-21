@@ -20,6 +20,8 @@ namespace Game
             }
             _context.ResetRule();
             _context.DialogCurrentRule();
+            
+            _stateMachine.ChangeState<CharacterEnterState>();
         }
 
 
