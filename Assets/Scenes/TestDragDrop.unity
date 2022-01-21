@@ -166,7 +166,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 160
+        x: 352
         y: 105
         width: 116
         height: 32
@@ -227,28 +227,19 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 57
-        y: 248
-        width: 112
-        height: 48
+        x: 50
+        y: 230
+        width: 115
+        height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: ReleaseBack
-          isSystemEvent: 0
+          name: MOUSE UP
+          isSystemEvent: 1
           isGlobal: 0
-        toState: DroppedBack
-        linkStyle: 0
-        linkConstraint: 0
-        linkTarget: 0
-        colorIndex: 0
-      - fsmEvent:
-          name: ReleaseOut
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: DroppedOut
+        toState: Dropping
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -343,7 +334,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 233
+        x: 425
         y: 320
         width: 103
         height: 32
@@ -404,7 +395,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 430
+        x: 622
         y: 335
         width: 100
         height: 16
@@ -456,7 +447,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 229
+        x: 421
         y: 210
         width: 111
         height: 32
@@ -469,6 +460,76 @@ MonoBehaviour:
           isSystemEvent: 1
           isGlobal: 0
         toState: Idle
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    - name: Dropping
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 202
+        y: 286
+        width: 105
+        height: 48
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: ReleaseBack
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: DroppedBack
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: ReleaseOut
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: DroppedOut
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -528,6 +589,9 @@ MonoBehaviour:
     - name: OnDrag
       isSystemEvent: 0
       isGlobal: 1
+    - name: MOUSE UP
+      isSystemEvent: 1
+      isGlobal: 0
     globalTransitions: []
     variables:
       floatVariables: []
@@ -855,6 +919,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1626139690}
+  - component: {fileID: 1626139691}
   m_Layer: 0
   m_Name: SeaLevel
   m_TagString: Untagged
@@ -876,3 +941,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1626139691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626139689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 341e0ee8d9281e7419a9a5e1eb3eed0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

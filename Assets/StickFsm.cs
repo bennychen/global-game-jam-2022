@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using HutongGames.PlayMaker;
 using Unity.Collections.LowLevel.Unsafe;
 using UnityEditor.UI;
@@ -11,10 +12,15 @@ public class StickFsm : MonoBehaviour
     private PlayMakerFSM _fsm;
     private Vector3 _offset;
     private Transform _transformRef;
+    private float _seaLevelY;
+    private Vector3 _oriPos;
+    private Vector3 _oriScale;
+    
 
     private void Awake()
     {
         _fsm = GetComponent<PlayMakerFSM>();
+        _oriScale = transform.localScale;
         if (_fsm==null)
         {
             throw new Exception("play maker fsm does not exist on this game object...");
@@ -22,7 +28,7 @@ public class StickFsm : MonoBehaviour
         }
 
         _fsm.Fsm.StateChanged += OnStateChanged;
-        
+        _seaLevelY = SeaLevel.Instance.transform.position.y;
     }
     
     void OnStateChanged(FsmState fsmState)
@@ -44,8 +50,25 @@ public class StickFsm : MonoBehaviour
             case "Dispose":
                 Dispose();
                 break;
+            case "Dropping":
+                Dropping();
+                break;
             default:
                 break;
+            
+        }
+    }
+
+    private void Dropping()
+    {
+        if (transform.position.y >= _seaLevelY)
+        {
+            _fsm.SendEvent("ReleaseOut");
+            
+        }
+        else
+        {
+            _fsm.SendEvent("ReleaseBack");
         }
     }
 
@@ -57,14 +80,17 @@ public class StickFsm : MonoBehaviour
     private void BeingDragged()
     {
         _transformRef = transform;
+        var position = _transformRef.position;
+        _oriPos = position;
         System.Diagnostics.Debug.Assert(Camera.main != null, "Camera.main != null");
-        _offset = Camera.main.ScreenToWorldPoint(Input.mousePosition) - _transformRef.position;
-        _transformRef.localScale = new Vector3(0.7f, 0.7f, 1f);
+        _offset = Camera.main.ScreenToWorldPoint(Input.mousePosition) - position;
+        _transformRef.DOScale(_oriScale*.7f, 0.3f);
     }
 
     private void DroppedBack()
     {
-        throw new NotImplementedException();
+        _transformRef.DOScale(_oriScale, 0.3f);
+        _transformRef.DOMove(_oriPos, 0.7f);
     }
 
     private void Idle()
@@ -74,7 +100,8 @@ public class StickFsm : MonoBehaviour
 
     private void DroppedOut()
     {
-        throw new NotImplementedException();
+        _transformRef.DOScale(Vector3.zero, 0.7f);
+        
     }
 
     public void OnDrag()

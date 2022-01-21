@@ -41,6 +41,7 @@ namespace Prime31Editor
 
 		public static void rebuildConstantsClasses(bool buildResources = true, bool buildScenes = true, bool buildTagsAndLayers = true, bool buildSortingLayers = true)
 		{
+			return;
 			var folderPath = Application.dataPath + "/" + FOLDER_LOCATION;
 			if (!Directory.Exists(folderPath))
 				Directory.CreateDirectory(folderPath);
