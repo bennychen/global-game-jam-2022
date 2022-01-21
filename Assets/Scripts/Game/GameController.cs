@@ -10,11 +10,14 @@ namespace Game
     {
 
         public ConfigData ConfigData;
-        public GuideController GuideController = new GuideController();
-        public GameLoopController GameLoopController = new GameLoopController();
-        public PlayerController PlayerController = new PlayerController();
-        public CharacterController CharacterController = new CharacterController();
-
+        [HideInInspector]
+        public GuideController GuideController;
+        [HideInInspector]
+        public GameLoopController GameLoopController;
+        [HideInInspector]
+        public PlayerController PlayerController;
+        [HideInInspector]
+        public DialogController DialogController;
 
         public GameObject GameStartScene;
         public GameObject GameGuideScene;
@@ -24,9 +27,18 @@ namespace Game
         
         public StateMachine<GameController> GameStateMachine;
 
-        public void OnAwake()
+        protected override void OnAwake()
         {
+            CreateController();
             CreateGameStateMachine();
+        }
+
+        private void CreateController()
+        {
+            GuideController = gameObject.AddComponent<GuideController>();
+            GameLoopController = gameObject.AddComponent<GameLoopController>();
+            PlayerController = gameObject.AddComponent<PlayerController>();
+            DialogController = gameObject.AddComponent<DialogController>();
         }
 
 
@@ -56,5 +68,6 @@ namespace Game
         {
             GameStateMachine.ChangeState<EndingState>();
         }
+
     }
 }

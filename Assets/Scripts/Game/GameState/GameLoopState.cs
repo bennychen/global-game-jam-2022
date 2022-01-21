@@ -9,6 +9,7 @@ namespace Game
         {
             base.OnEnter();
             _context.GameLoopScene.SetActive(true);
+            _context.GameLoopController.GameLoopStateMachine.ChangeState<ChangeNextDayState>();
         }
 
         public override void OnExit()

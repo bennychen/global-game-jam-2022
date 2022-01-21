@@ -12,6 +12,7 @@ namespace Game
             _context.LevelModel.CurrentCharacterData =
                 GameController.Instance.ConfigData.AllCharacter[_context.LevelModel.CurrentDay];
             _context.LevelModel.CurrentCharacter = LoadCharacter();
+            
         }
 
         private Character LoadCharacter()

@@ -25,9 +25,28 @@ namespace Game
         public List<CharacterData> AllCharacter;
         public List<LevelData> AllLevel;
         public List<RuleData> AllRule;
+        public List<DialogData> AllDialog;
 
         public int AllScore = 10;
         public int LevelAmount = 30;
+        public List<int> DefaultRule = new List<int>();
+
+        
+
+        public DialogData GetDialogByKey(string key)
+        {
+            if (keyToDialog == null)
+            {
+                keyToDialog = new Dictionary<string, DialogData>();
+                foreach (var dialog in AllDialog)
+                {
+                    keyToDialog.Add(dialog.key, dialog);
+                }
+            }
+
+            return keyToDialog[key];
+        }
+        private Dictionary<string, DialogData> keyToDialog;
     }
 
 
