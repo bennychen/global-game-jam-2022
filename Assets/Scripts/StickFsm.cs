@@ -90,7 +90,10 @@ public class StickFsm : MonoBehaviour
     private void DroppedBack()
     {
         _transformRef.DOScale(_oriScale, 0.3f);
-        _transformRef.DOMove(_oriPos, 0.7f);
+        _transformRef.DOMove(_oriPos, 0.7f).OnComplete(() =>
+        {
+            _fsm.SendEvent("TweenFinish");
+        });
     }
 
     private void Idle()
@@ -100,7 +103,10 @@ public class StickFsm : MonoBehaviour
 
     private void DroppedOut()
     {
-        _transformRef.DOScale(Vector3.zero, 0.7f);
+        _transformRef.DOScale(Vector3.zero, 0.7f).OnComplete(() =>
+        {
+            _fsm.SendEvent("TweenFinish");
+        });
         
     }
 
