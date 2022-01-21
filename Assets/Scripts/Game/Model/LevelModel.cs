@@ -19,7 +19,7 @@ namespace Game.Model
         public CharacterData CurrentCharacterData;
         public Character CurrentCharacter;
         public LevelData CurrentLevel;
-        public List<RuleData> CurrentRule;
+        public List<RuleData> CurrentRule = new List<RuleData>();
         
     }
 }

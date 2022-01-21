@@ -1,6 +1,7 @@
 ﻿
 using Codeplay;
 using Game.Model;
+using UnityEngine;
 
 namespace Game
 {
@@ -35,17 +36,20 @@ namespace Game
 
         private void GoodEnding()
         {
-            throw new System.NotImplementedException();
+            GameController.Instance.SendMessage("NpcDialog", "GoodEnding");
+            Debug.LogError("GoodEnding");
         }
 
         private void EthicsEnding()
         {
-            throw new System.NotImplementedException();
+            GameController.Instance.SendMessage("NpcDialog", "EthicsEnding");
+            Debug.LogError("EthicsEnding");
         }
 
         private void BadEnding()
         {
-            throw new System.NotImplementedException();
+            GameController.Instance.SendMessage("NpcDialog", "BadEnding");
+            Debug.LogError("BadEnding");
         }
 
 

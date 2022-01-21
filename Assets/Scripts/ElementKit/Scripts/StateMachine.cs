@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Codeplay
 {
@@ -86,6 +87,7 @@ namespace Codeplay
 
 		public void ChangeState(Type newType)
 		{
+			Debug.Log("change to:" + newType.ToString());
 			if (_currentState != null && _currentState.GetType() == newType)
 			{
 				return;
