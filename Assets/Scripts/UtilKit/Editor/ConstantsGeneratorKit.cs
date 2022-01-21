@@ -400,18 +400,18 @@ namespace Prime31Editor
 				resourcesDidChange = deletedAssets.Any(s => Regex.IsMatch(s, @"/Resources/.*", System.Text.RegularExpressions.RegexOptions.IgnoreCase));
 
 			if (resourcesDidChange)
-				ConstantsGeneratorKit.rebuildConstantsClasses(true, false, false);
+				// ConstantsGeneratorKit.rebuildConstantsClasses(true, false, false);
 
 
-			// layers and tags changes
-			if (importedAssets.Contains("ProjectSettings/TagManager.asset"))
-			{
-				if (!_lastTagsAndLayersBuildTime.HasValue || _lastTagsAndLayersBuildTime.Value.AddSeconds(5) < DateTime.Now)
+				// layers and tags changes
+				if (importedAssets.Contains("ProjectSettings/TagManager.asset"))
 				{
-					_lastTagsAndLayersBuildTime = DateTime.Now;
-					ConstantsGeneratorKit.rebuildConstantsClasses(false, false);
+					if (!_lastTagsAndLayersBuildTime.HasValue || _lastTagsAndLayersBuildTime.Value.AddSeconds(5) < DateTime.Now)
+					{
+						_lastTagsAndLayersBuildTime = DateTime.Now;
+						ConstantsGeneratorKit.rebuildConstantsClasses(false, false);
+					}
 				}
-			}
 
 
 			// scene changes
