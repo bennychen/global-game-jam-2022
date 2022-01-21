@@ -9,10 +9,18 @@ namespace Game
         public override void OnEnter()
         {
             base.OnEnter();
+            var characterIndex = PickCharacter();
             _context.LevelModel.CurrentCharacterData =
-                GameController.Instance.ConfigData.AllCharacter[_context.LevelModel.CurrentDay];
+                GameController.Instance.ConfigData.AllCharacter[characterIndex];
             _context.LevelModel.CurrentCharacter = LoadCharacter();
-            
+
+
+            _stateMachine.ChangeState<CharacterAwaitState>();
+        }
+
+        private int PickCharacter()
+        {
+            return _context.LevelModel.CurrentLevel.CharacterList[_context.LevelModel.CurrentCharacterIndex];
         }
 
         private Character LoadCharacter()

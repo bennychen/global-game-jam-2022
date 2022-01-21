@@ -10,12 +10,17 @@ namespace Game
         public override void OnEnter()
         {
             base.OnEnter();
-            GameObject.Destroy(_context.LevelModel.CurrentCharacter.gameObject);
+            
             _context.LevelModel.CurrentDay++;
+            _context.LevelModel.CurrentCharacterIndex = 0;
+            if (_context.LevelModel.CurrentDay >= GameController.Instance.ConfigData.AllLevel.Count)
+            {
+                GameController.Instance.GameStateMachine.ChangeState<EndingState>();
+                return;
+            }
             _context.ResetRule();
             _context.DialogCurrentRule();
         }
-
 
 
         public override void OnExit()

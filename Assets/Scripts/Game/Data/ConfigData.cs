@@ -27,9 +27,10 @@ namespace Game
         public List<RuleData> AllRule;
         public List<DialogData> AllDialog;
 
-        public int AllScore = 10;
-        public int LevelAmount = 30;
+        public int DefaultHP = 5;
+        // public int DayAmount = 10;
         public List<int> DefaultRule = new List<int>();
+        public int EthicsEndingThreshold = 10;
 
         
 

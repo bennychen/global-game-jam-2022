@@ -7,7 +7,9 @@ namespace Game
     [Serializable]
     public class LevelData
     {
-        public int Day = 0;
+        // public int IndexIsDay = 0;
+        // public int CharacterAmount = 3;
+        public List<int> CharacterList = new List<int>();
         // <0 is random
         public List<int> RuleIndex = new List<int>();
         

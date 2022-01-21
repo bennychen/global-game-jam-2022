@@ -13,17 +13,27 @@ MonoBehaviour:
   m_Name: ConfigData
   m_EditorClassIdentifier: 
   AllCharacter:
-  - MainSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-    MainStory: []
-    AgeOfDead: 
-    DeadReason: 
+  - Name: "\u90D1\u864E"
+    AgeOfDeath: 51
+    DeadReason: "\u5BFF\u7EC8"
+    NumberOfChild: 2
+    NumberOfKilled: 0
     Crime: 
-    NumberOfChild: 0
-    NumberOfKill: 0
-    Score: 1
-    IsGoodMen: 0
-    IsNeedToHeaven: 0
-  AllLevel: []
+    Ethics: 3
+    Comment: "\u5C60\u6237\uFF0C\u76F4\u7387\uFF0C\u91CD\u89C6\u5BB6\u4EBA\uFF0C\u8BB2\u89E3\u89C4\u5219\uFF0C\u6740\u4E1A\u53EA\u7BA1\u4EBA"
+    SummaryDialog: "\u4FFA\u2026\u2026\u8FD9\u662F\u5728\u5730\u72F1\u4E48\uFF1F\u4FFA\u5728\u6751\u91CC\u5F53\u5C60\u6237\uFF0C\u5F00\u8089\u94FA\uFF0C\u5E73\u65F6\u9075\u7EAA\u5B88\u6CD5\uFF0C\u5356\u7684\u662F\u4E00\u8180\u5B50\u529B\u6C14"
+    AgeOfDeathDialog: "\u8FD9\u4E2A\u5E74\u7EAA\uFF0C\u4E24\u4E2A\u513F\u5B50\u4E5F\u80FD\u8BA8\u751F\u6D3B\u4E86\uFF0C\u4FFA\u77E5\u8DB3\u5566"
+    DeadReasonDialog: "\u8001\u4F24\u53E3\u53D1\u4F5C\uFF0C\u8EAB\u4F53\u5C31\u4E0D\u884C\u4E86"
+    NumberOfChildDialog: "\u4FFA\u8FD9\u8F88\u5B50\u6700\u626C\u7709\u5410\u6C14\u5C31\u662F\u4E3A\u90D1\u5BB6\u517B\u4E86\u4E24\u4E2A\u513F\u5B50\uFF0C\u563F\u563F\u563F"
+    NumberOfKilledDialog: "\u6740\u4E9B\u7272\u53E3\u5F53\u771F\u4E0D\u4F1A\u635F\u4FFA\u7684\u9634\u5FB7\uFF1F\u592A\u597D\u5566"
+    RewardDialog: "\u4FFA\u53EF\u4EE5\u53BB\u6295\u80CE\u5566\uFF1F\u8C22\u5927\u4EBA\uFF01"
+    PenaltyDialog: "\u8FD9\u8F88\u5B50\u6CA1\u5C11\u5BB0\u732A\u5BB0\u7F8A\uFF0C\u4FFA\u8BA4\u5566"
+    MainSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  AllLevel:
+  - CharacterList: 000000000100000002000000
+    RuleIndex: 
+  - CharacterList: 000000000100000002000000
+    RuleIndex: 
   AllRule: []
   AllDialog:
   - key: first_enter_game
@@ -37,5 +47,6 @@ MonoBehaviour:
     dialog: "\u6709\u65F6\u5730\u5E9C\u4F1A\u6539\u53D8\u89C4\u5219\uFF0C\u6700\u65B0\u7684\u89C4\u5219\u6211\u5DF2\u7ECF\u6574\u7406\u5728\u8FD9\u91CC\u3002"
   - key: on_first_mistake
     dialog: "\u521A\u624D\u5927\u4EBA\u8BA9XX\u53BB\u53D7\u7F5A/\u53D7\u8D4F\uFF0C\u4F46\u6B64\u4EBA\u751F\u4E1A/\u6740\u4E1A\u592A\u91CD\uFF0C\u6309\u7406\u4E0D\u5E94\u5982\u6B64\u3002\u4F46\u8FD9\u4E16\u4E0A\u7684\u4E8B\u96BE\u8BF4\u5F97\u5F88\uFF0C\u6211\u65E0\u610F\u5E72\u6270\u51B3\u5B9A\uFF0C\u53EA\u662F\u8FD9\u5927\u8001\u7237\u82E5\u6709\u5FC3\u662F\u80FD\u5BDF\u89C9\u7684\uFF08\u5C55\u793AHp\u4F4D\u7F6E\uFF09\uFF0C\u5927\u4EBA\u597D\u81EA\u4E3A\u4E4B\u4FBF\u662F{0}Hp\u5F52\u96F6\u4F1A\u5BFC\u81F4\u8FDB\u5165\u574F\u7ED3\u5C40"
-  AllScore: 10
-  LevelAmount: 30
+  DefaultHP: 3
+  DefaultRule: 
+  EthicsEndingThreshold: 10

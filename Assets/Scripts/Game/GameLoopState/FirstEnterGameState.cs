@@ -7,6 +7,9 @@ namespace Game
         public override void OnEnter()
         {
             base.OnEnter();
+
+            _context.LevelModel.CurrentDay = 0;
+   
             _context.ResetRule();
             _stateMachine.ChangeState<CharacterEnterState>();
         }
