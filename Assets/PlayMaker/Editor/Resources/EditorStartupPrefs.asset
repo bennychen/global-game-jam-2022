@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5210ce93b60c74b910290c522cd727, type: 3}
   m_Name: EditorStartupPrefs
   m_EditorClassIdentifier: 
-  welcomeScreenVersion: 
+  welcomeScreenVersion: '1.9.4 '
   playmakerVersion: 
   showWelcomeScreen: 1
   showUpgradeGuide: 0
-  lastAutoUpdateSignature: 2019.3.0f6__C:/Projects/Playmaker_1.9.1/Projects/Unity2019.3/Playmaker.gen.unity/Assets__0.0.0.0
+  lastAutoUpdateSignature: 2020.3.26f1c1__C:/Users/futou/Documents/global-game-jam-2022/Assets__0.0.0.0
   useLegacyNetworking: 0
