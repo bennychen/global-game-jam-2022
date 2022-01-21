@@ -8,6 +8,13 @@ namespace Game.Model
     {
         public int HP;
         public int CurrentDay = -1;
+        public int CurrentCharacterIndex = 0;
+        public int CorrectScore;
+        // 秩序分
+        public int CorrectButNotEthicsScore;
+        // 道德分
+        public int EthicsButMistakeScore;
+        public bool CurrentJudgeToHeaven;
 
         public CharacterData CurrentCharacterData;
         public Character CurrentCharacter;

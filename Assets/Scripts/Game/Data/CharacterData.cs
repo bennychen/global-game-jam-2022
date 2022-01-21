@@ -5,25 +5,38 @@ using UnityEngine;
 
 namespace Game
 {
-    
+    public enum EthicsType
+    {
+        Evil = 1,
+        Neutral,
+        Good,
+    }
     [Serializable]
     public class CharacterData
     {
         public string Name;
-        public Sprite MainSprite;
-        public List<string> MainStory;
-        public string AgeOfDeath;
+        public int AgeOfDeath;
         public string DeadReason;
-        public string Crime;
         public int NumberOfChild;
         public int NumberOfKilled;
-
-       
+        public string Crime;
         // 道德评判
-        public bool IsGoodMen;
-        // 秩序评判
-        public List<int> MeetRules;
+        public EthicsType Ethics;
+        public string Comment;
         
-        public int Score = 1;
+        
+        public string SummaryDialog;
+        public string AgeOfDeathDialog;
+        public string DeadReasonDialog;
+        public string NumberOfChildDialog;
+        public string NumberOfKilledDialog;
+        public string RewardDialog;
+        public string PenaltyDialog;
+        
+       
+        
+        public Sprite MainSprite;
+        // public List<int> MeetRules;
+        // public int Score = 1;
     }
 }

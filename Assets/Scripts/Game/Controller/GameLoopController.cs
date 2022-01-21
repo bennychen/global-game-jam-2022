@@ -29,7 +29,14 @@ namespace Game
             GameLoopStateMachine.AddState(new ChangeNextDayState());
 
             ChangeToFirstEnterGame();
+            ResetLevelModel();
             // GameStateMachine.OnStateChanged += OnGameStateChanged;
+        }
+
+        private void ResetLevelModel()
+        {
+            LevelModel.HP = GameController.Instance.ConfigData.DefaultHP;
+            
         }
 
         public void ChangeToFirstEnterGame()
@@ -52,6 +59,40 @@ namespace Game
             GameLoopStateMachine.ChangeState<ChangeNextDayState>();
         }
         
+        public void PlayerJudge(bool toHeaven)
+        {
+            CharacterData character = LevelModel.CurrentCharacterData;
+            var meetRule = MeetRule(character, toHeaven);
+            if (meetRule)
+            {
+                LevelModel.CorrectScore++;
+                if (!toHeaven && character.Ethics == EthicsType.Good)
+                {
+                    LevelModel.CorrectButNotEthicsScore++;
+                }
+            }
+            else
+            {
+                LevelModel.CorrectScore--;
+                LevelModel.HP--;
+                if (toHeaven && character.Ethics == EthicsType.Good)
+                {
+                    LevelModel.EthicsButMistakeScore++;
+                }
+            }
+
+            LevelModel.CurrentJudgeToHeaven = toHeaven;
+
+            
+            GameLoopStateMachine.ChangeState<CharacterLeaveState>();
+        }
+
+        private bool MeetRule(CharacterData character, bool toHeaven)
+        {
+            // TODO no rule
+            return true;
+        }
+
         public void DialogCurrentRule()
         {
             if (LevelModel.CurrentDay <= 0)
@@ -71,6 +112,8 @@ namespace Game
 
         public void ResetRule()
         {
+            LevelModel.CurrentLevel =
+                GameController.Instance.ConfigData.AllLevel[LevelModel.CurrentDay];
             LevelModel.CurrentRule.Clear();
             foreach (var ruleID in GameController.Instance.ConfigData.DefaultRule)
             {
