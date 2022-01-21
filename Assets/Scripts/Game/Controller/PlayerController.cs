@@ -1,7 +1,9 @@
 ﻿
+using UnityEngine;
+
 namespace Game
 {
-    public class PlayerController
+    public class PlayerController : MonoBehaviour
     {
 
         public void Judge()

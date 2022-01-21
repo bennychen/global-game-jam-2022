@@ -7,5 +7,9 @@ namespace Game
     {
         //move
         //speak
+        public void SaySomething()
+        {
+            
+        }
     }
 }

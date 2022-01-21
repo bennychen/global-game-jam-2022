@@ -1,7 +1,9 @@
 ﻿
+using UnityEngine;
+
 namespace Game
 {
-    public class GuideController
+    public class GuideController : MonoBehaviour
     {
         
     }
