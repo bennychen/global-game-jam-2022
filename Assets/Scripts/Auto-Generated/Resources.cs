@@ -3,5 +3,6 @@ namespace k
 {
 	public static class Resources
 	{
+		public const string CONFIG_DATA = "ConfigData";
 	}
 }
