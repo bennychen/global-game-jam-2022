@@ -57,7 +57,8 @@ public class StickFsm : MonoBehaviour
     private void BeingDragged()
     {
         _transformRef = transform;
-        _offset = Input.mousePosition - _transformRef.position;
+        System.Diagnostics.Debug.Assert(Camera.main != null, "Camera.main != null");
+        _offset = Camera.main.ScreenToWorldPoint(Input.mousePosition) - _transformRef.position;
         _transformRef.localScale = new Vector3(0.7f, 0.7f, 1f);
     }
 
@@ -78,9 +79,10 @@ public class StickFsm : MonoBehaviour
 
     public void OnDrag()
     {
-        transform.position = Input.mousePosition - _offset;
-        Debug.Log(
-            $"mouse position is {Input.mousePosition}, offset is {_offset}, sprite position is {_transformRef.position}");
+        System.Diagnostics.Debug.Assert(Camera.main != null, "Camera.main != null");
+        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) - _offset;
+        // Debug.Log(
+            // $"mouse position is {Input.mousePosition}, offset is {_offset}, sprite position is {_transformRef.position}");
         
     }
 }
