@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NpcDialogueBubble : MonoBehaviour
+public class NpcDialogueBubble : MonoBehaviour, Prime31.IObjectInspectable
 {
 	public UnityEngine.UI.Text text;
 
