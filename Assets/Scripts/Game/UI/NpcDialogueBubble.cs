@@ -21,7 +21,8 @@ public class NpcDialogueBubble : MonoBehaviour, Prime31.IObjectInspectable
 	public void PopupWithAnim(string txt, System.Action onComplete = null)
 	{
 		gameObject.SetActive(true);
-		this._onAnimComplete = onComplete;
+		Game.GameController.Instance.DialogController.overlay.Show(this.onClickOverlay);
+		this._onComplete = onComplete;
 		StopAllCoroutines();
 		StartCoroutine(Typewriter(txt));
 	}
@@ -29,6 +30,7 @@ public class NpcDialogueBubble : MonoBehaviour, Prime31.IObjectInspectable
 	public void Popup(string txt)
 	{
 		StopAllCoroutines();
+		Game.GameController.Instance.DialogController.overlay.Show(this.onClickOverlay);
 		gameObject.SetActive(true);
 		text.text = txt;
 	}
@@ -37,6 +39,23 @@ public class NpcDialogueBubble : MonoBehaviour, Prime31.IObjectInspectable
 	{
 		StopAllCoroutines();
 		gameObject.SetActive(false);
+	}
+
+	private void onClickOverlay()
+	{
+		Debug.Log("onclick" + this._isAnimating + this._onComplete);
+		if (this._isAnimating)
+		{
+			this._isAnimating = false;
+		}
+		else
+		{
+			if (this._onComplete != null)
+			{
+				this._onComplete();
+			}
+			this.Hide();
+		}
 	}
 
 	private IEnumerator Typewriter(string txt)
@@ -55,13 +74,9 @@ public class NpcDialogueBubble : MonoBehaviour, Prime31.IObjectInspectable
 				text.text = txt;
 			}
 		}
-		if (this._onAnimComplete != null)
-		{
-			this._onAnimComplete();
-		}
 		yield return null;
 	}
 
 	private bool _isAnimating;
-	private System.Action _onAnimComplete;
+	private System.Action _onComplete;
 }

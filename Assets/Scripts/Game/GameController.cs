@@ -1,7 +1,5 @@
 ﻿
-using System;
 using Codeplay;
-using JumpExample;
 using UnityEngine;
 
 namespace Game

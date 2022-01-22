@@ -6,6 +6,7 @@ namespace Game
 	{
 		public NpcDialogue npcDialogue;
 		public NpcDialogueBubble tutorialDialogue;
+		public UIOverlay overlay;
 
 		public void NpcDialog(string dialog)
 		{
@@ -31,7 +32,7 @@ namespace Game
 			//GameObject.Find("TestCharDialog").GetComponent<Text>().text = dialog;
 		}
 
-		public void TutorialDialog(string dialog)
+		public void TutorialDialog(string dialog, System.Action onAnimComplete = null)
 		{
 			if (!tutorialDialogue)
 			{
@@ -40,7 +41,7 @@ namespace Game
 			if (!string.IsNullOrEmpty(dialog))
 			{
 				Debug.Log("TutorialDialog:" + dialog);
-				tutorialDialogue.PopupWithAnim(dialog);
+				tutorialDialogue.PopupWithAnim(dialog, onAnimComplete);
 			}
 			else
 			{

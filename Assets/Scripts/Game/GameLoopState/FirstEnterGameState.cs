@@ -1,34 +1,36 @@
-﻿using System.Collections;
-using Codeplay;
-using UnityEngine;
+﻿using Codeplay;
 
 namespace Game
 {
-    public class FirstEnterGameState : State<GameLoopController>
-    {
-        public override void OnEnter()
-        {
-            base.OnEnter();
+	public class FirstEnterGameState : State<GameLoopController>
+	{
+		public override void OnEnter()
+		{
+			base.OnEnter();
 
-            _context.LevelModel.CurrentDay = 0;
-   
-            _context.ResetRule();
+			_context.LevelModel.CurrentDay = 0;
 
-            Job.Make(AwaitToChangeState());
+			_context.ResetRule();
 
-        }
+			AwaitToChangeState();
 
-        private IEnumerator AwaitToChangeState()
-        {
-            GameController.Instance.DialogController.TutorialDialog(
-                GameController.Instance.ConfigData.GetDialogByKey("first_enter_game"));
-            yield return new WaitForSeconds(2);
-            _stateMachine.ChangeState<CharacterEnterState>();
-        }
+		}
 
-        public override void OnExit()
-        {
-            base.OnExit();
-        }
-    }
+		private void AwaitToChangeState()
+		{
+			GameController.Instance.DialogController.TutorialDialog(
+					GameController.Instance.ConfigData.GetDialogByKey("first_enter_game"),
+										this.onAnimComplete);
+		}
+
+		private void onAnimComplete()
+		{
+			_stateMachine.ChangeState<CharacterEnterState>();
+		}
+
+		public override void OnExit()
+		{
+			base.OnExit();
+		}
+	}
 }
