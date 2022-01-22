@@ -8,12 +8,7 @@ namespace Game
 	{
 		[SerializeField]
 		[Range(1, 5)]
-		public int SkinIndex = 1;
-
-		public void Awake()
-		{
-			skeletonAnimation = GetComponent<SkeletonAnimation>();
-		}
+		public int debugSkinIndex = 1;
 
 		//move
 		//speak
@@ -24,9 +19,18 @@ namespace Game
 		}
 
 		[Prime31.MakeButton]
-		public void changeSkin()
+		public void debugSkin()
 		{
-			skeletonAnimation.Skeleton.SetSkin("pifu0" + SkinIndex);
+			this.changeSkin("pifu0" + debugSkinIndex);
+		}
+
+		public void changeSkin(string name)
+		{
+			if (skeletonAnimation == null)
+			{
+				skeletonAnimation = GetComponent<SkeletonAnimation>();
+			}
+			skeletonAnimation.Skeleton.SetSkin(name);
 			skeletonAnimation.Skeleton.SetSlotsToSetupPose();
 		}
 

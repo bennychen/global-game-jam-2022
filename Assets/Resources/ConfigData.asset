@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AllCharacter:
   - Name: "\u90D1\u864E"
+    Skin: pifu02
     AgeOfDeath: 51
     DeadReason: "\u5BFF\u7EC8"
     NumberOfChild: 2
