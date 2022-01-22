@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Game
 {
-    public enum Judgement
+    public enum EJudgement
     {
         Hell,
         Heaven,
@@ -25,7 +25,7 @@ namespace Game
         private Vector3 _oriPos;
         private Vector3 _oriScale;
 
-        public Judgement Judgement;
+        public EJudgement eJudgement;
         
         public Action OnDroppedOut = delegate { };
         
