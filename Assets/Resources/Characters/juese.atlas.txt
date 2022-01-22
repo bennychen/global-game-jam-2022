@@ -1,0 +1,76 @@
+
+juese.png
+size: 1944,1944
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body1
+  rotate: false
+  xy: 2, 1340
+  size: 843, 602
+  orig: 843, 602
+  offset: 0, 0
+  index: -1
+body2
+  rotate: true
+  xy: 572, 41
+  size: 658, 559
+  orig: 658, 559
+  offset: 0, 0
+  index: -1
+body3
+  rotate: false
+  xy: 2, 701
+  size: 669, 637
+  orig: 669, 637
+  offset: 0, 0
+  index: -1
+body4
+  rotate: true
+  xy: 1469, 609
+  size: 561, 473
+  orig: 561, 473
+  offset: 0, 0
+  index: -1
+body5
+  rotate: true
+  xy: 2, 24
+  size: 675, 568
+  orig: 675, 570
+  offset: 0, 2
+  index: -1
+head1
+  rotate: true
+  xy: 847, 1172
+  size: 320, 817
+  orig: 320, 817
+  offset: 0, 0
+  index: -1
+head2
+  rotate: false
+  xy: 1133, 14
+  size: 334, 716
+  orig: 334, 716
+  offset: 0, 0
+  index: -1
+head3
+  rotate: true
+  xy: 847, 1494
+  size: 448, 813
+  orig: 448, 813
+  offset: 0, 0
+  index: -1
+head4
+  rotate: false
+  xy: 1469, 11
+  size: 274, 596
+  orig: 274, 596
+  offset: 0, 0
+  index: -1
+head5
+  rotate: true
+  xy: 673, 732
+  size: 438, 749
+  orig: 439, 749
+  offset: 1, 0
+  index: -1
