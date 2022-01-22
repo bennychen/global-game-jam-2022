@@ -24,11 +24,12 @@ namespace Game
 
 		public void CharacterDialog(string dialog)
 		{
-			Debug.Log("dialog:" + dialog);
+			Debug.Log("CharacterDialog:" + dialog);
+			NpcDialog(dialog);
 			//GameObject.Find("TestCharDialog").GetComponent<Text>().text = dialog;
 		}
 
-                public void PopupSummaryDialog()
+        public void PopupSummaryDialog()
         {
             CharacterDialog(GameController.Instance.GameLoopController.LevelModel.CurrentCharacterData.SummaryDialog);
         }
