@@ -49,10 +49,15 @@ namespace Game
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                _fsm.SendEvent("DrawEnable");
-                // _fsm.SendEvent("DrawDisable");
-                _fsm.SendEvent("Reset");
+                EnableStick();
             }
+        }
+        
+        public void EnableStick()
+        {
+            _fsm.SendEvent("DrawEnable");
+            // _fsm.SendEvent("DrawDisable");
+            _fsm.SendEvent("Reset");
         }
 
         void OnStateChanged(FsmState fsmState)
