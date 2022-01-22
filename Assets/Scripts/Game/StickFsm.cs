@@ -29,7 +29,9 @@ namespace Game
         private void Awake()
         {
             _fsm = GetComponent<PlayMakerFSM>();
-            _oriScale = transform.localScale;
+            var transformRef = transform;
+            _oriPos = transformRef.position;
+            _oriScale = transformRef.localScale;
             if (_fsm==null)
             {
                 throw new Exception("play maker fsm does not exist on this game object...");
@@ -39,7 +41,17 @@ namespace Game
             _fsm.Fsm.StateChanged += OnStateChanged;
             _seaLevelY = SeaLevel.Instance.transform.position.y;
         }
-    
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                _fsm.SendEvent("DrawEnable");
+                _fsm.SendEvent("DrawDisable");
+                _fsm.SendEvent("Reset");
+            }
+        }
+
         void OnStateChanged(FsmState fsmState)
         {
             switch (fsmState.Name)
@@ -96,7 +108,6 @@ namespace Game
         {
             _transformRef = transform;
             var position = _transformRef.position;
-            _oriPos = position;
             System.Diagnostics.Debug.Assert(Camera.main != null, "Camera.main != null");
             _offset = Camera.main.ScreenToWorldPoint(Input.mousePosition) - position;
             _transformRef.DOScale(_oriScale*.7f, 0.3f);

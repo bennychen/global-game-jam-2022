@@ -552,7 +552,7 @@ MonoBehaviour:
         linkTarget: 0
         colorIndex: 0
       - fsmEvent:
-          name: DrawDiable
+          name: DrawDisable
           isSystemEvent: 0
           isGlobal: 0
         toState: Idle
@@ -603,34 +603,34 @@ MonoBehaviour:
     - name: FINISHED
       isSystemEvent: 1
       isGlobal: 0
-    - name: ReleaseOut
-      isSystemEvent: 0
-      isGlobal: 0
     - name: MOUSE DOWN
       isSystemEvent: 1
       isGlobal: 0
-    - name: ReleaseBack
-      isSystemEvent: 0
-      isGlobal: 0
-    - name: OnDrag
-      isSystemEvent: 0
-      isGlobal: 1
     - name: MOUSE UP
       isSystemEvent: 1
       isGlobal: 0
-    - name: TweenFinish
-      isSystemEvent: 0
-      isGlobal: 0
-    - name: EnableDraw
+    - name: DrawDisable
       isSystemEvent: 0
       isGlobal: 0
     - name: DrawEnable
       isSystemEvent: 0
       isGlobal: 0
-    - name: DrawDiable
+    - name: EnableDraw
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: OnDrag
+      isSystemEvent: 0
+      isGlobal: 1
+    - name: ReleaseBack
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: ReleaseOut
       isSystemEvent: 0
       isGlobal: 0
     - name: Reset
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: TweenFinish
       isSystemEvent: 0
       isGlobal: 0
     globalTransitions: []
