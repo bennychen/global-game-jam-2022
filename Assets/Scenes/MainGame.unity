@@ -548,6 +548,7 @@ GameObject:
   - component: {fileID: 268742856}
   - component: {fileID: 268742855}
   - component: {fileID: 268742859}
+  - component: {fileID: 268742860}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -658,6 +659,19 @@ MonoBehaviour:
   - {fileID: 1146224390}
   - {fileID: 2096118475}
   - {fileID: 1922120078}
+--- !u!114 &268742860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268742854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b86757de0ef4c03840a629717831d8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcDialogue: {fileID: 268742859}
 --- !u!1 &282867434
 GameObject:
   m_ObjectHideFlags: 0
@@ -4139,6 +4153,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 268742858}
     m_Modifications:
+    - target: {fileID: 9161825025445717040, guid: c115850053ce7424eb94cf4907b8288d, type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9161825026132351338, guid: c115850053ce7424eb94cf4907b8288d, type: 3}
       propertyPath: m_RootOrder
       value: 0
