@@ -37,6 +37,7 @@ namespace Game
 			characterGameObject.name = _context.LevelModel.CurrentDay + "-" + _context.LevelModel.CurrentCharacterIndex + " name:" + _context.LevelModel.CurrentCharacterData.Name;
 			Debug.Log("Load:" + characterGameObject.name);
 			var character = characterGameObject.GetComponentAndCreateIfNonExist<Character>();
+			character.ResetDissolve();
 			var characterData = _context.LevelModel.CurrentCharacterData;
 			if (characterData != null)
 			{
