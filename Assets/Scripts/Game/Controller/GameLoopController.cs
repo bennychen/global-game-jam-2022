@@ -177,7 +177,21 @@ namespace Game
 			LevelModel.CurrentJudgeToHeaven = toHeaven;
 
 			GameLoopStateMachine.ChangeState<CharacterLeaveState>();
-			CheckFirstGuide();
+			StartCoroutine(this.FadeOutCurrentCharacter());
+		}
+
+		private IEnumerator FadeOutCurrentCharacter()
+		{
+			if (!LevelModel.CurrentJudgeToHeaven)
+			{
+				LevelModel.CurrentCharacter.FadeOut();
+				yield return new WaitForSeconds(1.5f);
+			}
+			else
+			{
+				yield return new WaitForSeconds(1f);
+			}
+			this.CheckFirstGuide();
 		}
 
 		private void CheckFirstGuide()
@@ -207,25 +221,6 @@ namespace Game
 								LevelModel.CurrentCharacterData.Name), this.ChangeNextCharacter);
 			}
 
-
-
-			StartCoroutine(TryChangeNextCharacter());
-		}
-
-		private IEnumerator TryChangeNextCharacter()
-		{
-			if (!LevelModel.CurrentJudgeToHeaven)
-			{
-				LevelModel.CurrentCharacter.FadeOut();
-				yield return new WaitForSeconds(1.5f);
-			}
-			else
-			{
-				yield return new WaitForSeconds(1f);
-			}
-			
-
-			ChangeNextCharacter();
 		}
 
 
