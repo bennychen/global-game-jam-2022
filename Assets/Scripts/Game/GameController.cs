@@ -24,6 +24,8 @@ namespace Game
 		public GameObject GameLoopScene;
 		public GameObject GameEndingScene;
 		public GameObject CharacterSpawn;
+		public StickFsm RewardButton;
+		public StickFsm PenaltyButton;
 
 		public StateMachine<GameController> GameStateMachine;
 
@@ -32,6 +34,8 @@ namespace Game
 			CreateController();
 			CreateGameStateMachine();
 		}
+
+
 
 		private void CreateController()
 		{

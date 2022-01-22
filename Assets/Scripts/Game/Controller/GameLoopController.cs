@@ -32,7 +32,14 @@ namespace Game
 
             //ChangeToFirstEnterGame();
             ResetLevelModel();
+            RegisterEvent();
             // GameStateMachine.OnStateChanged += OnGameStateChanged;
+        }
+        
+        private void RegisterEvent()
+        {
+            GameController.Instance.RewardButton.OnDroppedOut += PlayerJudgeToHeaven;
+            GameController.Instance.PenaltyButton.OnDroppedOut += PlayerJudgeToHell;
         }
 
         private void ResetLevelModel()

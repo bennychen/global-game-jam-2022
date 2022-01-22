@@ -33,12 +33,9 @@ namespace Game
 				Debug.Log("not found character game object, create a new one");
 				characterGameObject = new GameObject();
 			}
+			characterGameObject.gameObject.SetActive(true);
 			characterGameObject.name = _context.LevelModel.CurrentDay + "-" + _context.LevelModel.CurrentCharacterIndex + " name:" + _context.LevelModel.CurrentCharacterData.Name;
-			var nameText = GameObject.Find("CharacterInfo");
-			if (nameText != null)
-			{
-				nameText.GetComponent<Text>().text = characterGameObject.name;
-			}
+			Debug.Log("Load:" + characterGameObject.name);
 			var character = characterGameObject.GetComponentAndCreateIfNonExist<Character>();
 			var characterData = _context.LevelModel.CurrentCharacterData;
 			if (characterData != null)
