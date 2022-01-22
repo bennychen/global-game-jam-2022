@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 using System.Text;
 using Codeplay;
@@ -15,6 +16,8 @@ namespace Game
         public StateMachine<GameLoopController> GameLoopStateMachine;
 
         public LevelModel LevelModel = new LevelModel();
+
+        public List<Transform> HPList = new List<Transform>();
 
         private void Awake()
         {
@@ -33,9 +36,32 @@ namespace Game
             //ChangeToFirstEnterGame();
             ResetLevelModel();
             RegisterEvent();
+            ResetHP();
             // GameStateMachine.OnStateChanged += OnGameStateChanged;
         }
-        
+
+        private void ResetHP()
+        {
+            for (int i = 0; i <  GameController.Instance.HPRoot.transform.childCount; i++)
+            {
+                HPList.Add(GameController.Instance.HPRoot.transform.GetChild(i));
+            }
+
+            for (int i = GameController.Instance.ConfigData.DefaultHP; i < HPList.Count; i++)
+            {
+                HPList[i].gameObject.SetActive(false);
+            }
+        }
+
+        public void UpdateHp()
+        {
+            
+            for (int i = LevelModel.HP; i < GameController.Instance.ConfigData.DefaultHP; i++)
+            {
+                HPList[i].gameObject.SetActive(false);
+            }
+        }
+
         private void RegisterEvent()
         {
             GameController.Instance.RewardButton.OnDroppedOut += PlayerJudgeToHeaven;
@@ -97,6 +123,7 @@ namespace Game
                 Debug.Log("错误");
                 LevelModel.CorrectScore--;
                 LevelModel.HP--;
+                UpdateHp();
                 if (toHeaven && character.Ethics == EthicsType.Good)
                 {
                     Debug.Log("错误但道德");
