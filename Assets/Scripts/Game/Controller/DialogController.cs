@@ -64,6 +64,10 @@ namespace Game
 		public void PopupSummaryDialog()
 		{
 			CharacterDialog(GameController.Instance.GameLoopController.LevelModel.CurrentCharacterData.SummaryDialog);
+			Debug.Log("name:" + 
+			          GameController.Instance.GameLoopController.LevelModel.CurrentCharacterData.Name
+			          + " kill:" +GameController.Instance.GameLoopController.LevelModel.CurrentCharacterData.NumberOfKilled
+			          + " child: " +GameController.Instance.GameLoopController.LevelModel.CurrentCharacterData.NumberOfChild);
 		}
 		public void PopupAgeOfDeathDialog()
 		{
