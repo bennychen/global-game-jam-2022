@@ -1,14 +1,11 @@
-﻿
-using System;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 namespace Game
 {
 	public class DialogController : MonoBehaviour
 	{
 		public NpcDialogue npcDialogue;
-		public NpcDialogue tutorialDialogue;
+		public NpcDialogueBubble tutorialDialogue;
 
 		public void NpcDialog(string dialog)
 		{
@@ -32,6 +29,19 @@ namespace Game
 			}
 
 			//GameObject.Find("TestCharDialog").GetComponent<Text>().text = dialog;
+		}
+
+		public void TutorialDialog(string dialog)
+		{
+			if (!string.IsNullOrEmpty(dialog))
+			{
+				tutorialDialogue.gameObject.SetActive(true);
+				tutorialDialogue.text.text = dialog;
+			}
+			else
+			{
+				tutorialDialogue.gameObject.SetActive(false);
+			}
 		}
 
 		public void PopupSummaryDialog()
