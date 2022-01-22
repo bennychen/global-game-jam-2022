@@ -27,7 +27,6 @@ namespace Game
 		public StickFsm RewardButton;
 		public StickFsm PenaltyButton;
 		public GameObject HPRoot;
-		public GameObject RuleBook;
 
 		public StateMachine<GameController> GameStateMachine;
 

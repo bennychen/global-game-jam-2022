@@ -7,7 +7,6 @@ using System.Text;
 using Codeplay;
 using Game.Model;
 using UnityEngine;
-using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 namespace Game
@@ -43,7 +42,7 @@ namespace Game
 
         private void ResetHP()
         {
-            for (int i = 0; i < GameController.Instance.HPRoot.transform.childCount; i++)
+            for (int i = 0; i <  GameController.Instance.HPRoot.transform.childCount; i++)
             {
                 HPList.Add(GameController.Instance.HPRoot.transform.GetChild(i));
             }
@@ -56,30 +55,11 @@ namespace Game
 
         public void UpdateHp()
         {
-
+            
             for (int i = LevelModel.HP; i < GameController.Instance.ConfigData.DefaultHP; i++)
             {
                 HPList[i].gameObject.SetActive(false);
             }
-        }
-
-        public void PopupRuleBook()
-        {
-            StringBuilder buff = new StringBuilder();
-            foreach (var rule in LevelModel.CurrentRule)
-            {
-                buff.Append(rule.Description);
-                buff.Append("\r\n");
-            }
-
-            var currentRule = buff.ToString();
-            GameController.Instance.RuleBook.transform.GetChild(0).GetComponent<Text>().text = currentRule;
-            GameController.Instance.RuleBook.SetActive(true);
-        }
-
-        public void CloseRuleBook()
-        {
-            GameController.Instance.RuleBook.SetActive(false);
         }
 
         private void RegisterEvent()

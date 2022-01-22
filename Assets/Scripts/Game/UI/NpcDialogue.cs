@@ -4,11 +4,14 @@ using UnityEngine;
 public class NpcDialogue : MonoBehaviour, Prime31.IObjectInspectable
 {
 	public List<NpcDialogueBubble> bubbles;
+	public bool leftAligned;
 
 	public void Awake()
 	{
 		foreach (var bubble in bubbles)
 		{
+			var sr = bubble.GetComponent<SpriteRenderer>();
+			left = bubble.transform.localPosition.x;
 			_positions.Add(bubble.transform.localPosition.y);
 		}
 		Reset();
@@ -29,8 +32,10 @@ public class NpcDialogue : MonoBehaviour, Prime31.IObjectInspectable
 	[Prime31.MakeButton]
 	public void DebugDialogue()
 	{
-		this.PopupDialogue("大人饶命啊, 我是好人");
+		this.PopupDialogue(_debugText);
 	}
+	[SerializeField]
+	private string _debugText = "大人饶命啊, 我是好人";
 
 	public void PopupDialogue(string text)
 	{
@@ -45,9 +50,12 @@ public class NpcDialogue : MonoBehaviour, Prime31.IObjectInspectable
 		TextGenerationSettings generationSettings =
 				bubble.text.GetGenerationSettings(bubble.text.rectTransform.rect.size);
 		float width = textGen.GetPreferredWidth(text, generationSettings);
-		Debug.LogWarning(width);
 		var sr = bubble.GetComponent<SpriteRenderer>();
-		sr.size = new Vector2(width / 25, sr.size.y);
+		sr.size = new Vector2(width / 30, sr.size.y);
+		if (leftAligned)
+		{
+			bubble.transform.SetLocalPositionX(left + width / 2);
+		}
 
 		bubble.transform.SetLocalPositionY(this._positions[0]);
 		bubble.gameObject.SetActive(true);
@@ -88,6 +96,7 @@ public class NpcDialogue : MonoBehaviour, Prime31.IObjectInspectable
 		this._availableBubbles.Add(bubble);
 	}
 
+	private float left;
 	private List<float> _positions = new List<float>();
 	private List<NpcDialogueBubble> _usedBubbles = new List<NpcDialogueBubble>();
 	private List<NpcDialogueBubble> _availableBubbles = new List<NpcDialogueBubble>();
