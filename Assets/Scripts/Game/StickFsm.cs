@@ -57,7 +57,12 @@ namespace Game
         {
             _fsm.SendEvent("DrawEnable");
             // _fsm.SendEvent("DrawDisable");
+        }
+        
+        public void ShowStick()
+        {
             _fsm.SendEvent("Reset");
+
         }
 
         void OnStateChanged(FsmState fsmState)

@@ -8,7 +8,10 @@ namespace Game
         public override void OnEnter()
         {
             base.OnEnter();
+            
+            GameController.Instance.RewardButton.ShowStick();
             GameController.Instance.RewardButton.EnableStick();
+            GameController.Instance.PenaltyButton.ShowStick();
             GameController.Instance.PenaltyButton.EnableStick();
         }
 

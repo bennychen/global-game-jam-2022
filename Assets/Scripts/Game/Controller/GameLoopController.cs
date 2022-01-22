@@ -164,7 +164,7 @@ namespace Game
                 buff.Append("\r\n");
             }
             
-            // simple use SendMessage
+            // simple use SendsMessage
             GameController.Instance.SendMessage("NpcDialog", buff.ToString());
         }
 
