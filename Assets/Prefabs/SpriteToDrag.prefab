@@ -29,7 +29,7 @@ RectTransform:
   m_GameObject: {fileID: 1221344703931173195}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -113,19 +113,19 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 352
-        y: 105
-        width: 116
+        x: 427
+        y: 110
+        width: 100
         height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: MOUSE DOWN
-          isSystemEvent: 1
+          name: DrawEnable
+          isSystemEvent: 0
           isGlobal: 0
-        toState: BeingDragged
+        toState: Available
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 50
-        y: 230
+        y: 262
         width: 115
         height: 32
       isBreakpoint: 0
@@ -282,7 +282,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 425
-        y: 320
+        y: 352
         width: 103
         height: 32
       isBreakpoint: 0
@@ -343,13 +343,22 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 622
-        y: 335
+        y: 367
         width: 100
-        height: 16
+        height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
-      transitions: []
+      transitions:
+      - fsmEvent:
+          name: Reset
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Idle
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
       actionData:
         actionNames: []
         customNames: []
@@ -395,7 +404,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 421
-        y: 210
+        y: 242
         width: 111
         height: 32
       isBreakpoint: 0
@@ -406,7 +415,7 @@ MonoBehaviour:
           name: TweenFinish
           isSystemEvent: 0
           isGlobal: 0
-        toState: Idle
+        toState: Available
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -456,7 +465,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 202
-        y: 286
+        y: 318
         width: 105
         height: 48
       isBreakpoint: 0
@@ -520,6 +529,76 @@ MonoBehaviour:
         paramName: []
         paramDataPos: 
         paramByteDataSize: 
+    - name: Available
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 206
+        y: 113
+        width: 116
+        height: 48
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: MOUSE DOWN
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: BeingDragged
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: DrawDiable
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Idle
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -540,6 +619,18 @@ MonoBehaviour:
       isSystemEvent: 1
       isGlobal: 0
     - name: TweenFinish
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: EnableDraw
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: DrawEnable
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: DrawDiable
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Reset
       isSystemEvent: 0
       isGlobal: 0
     globalTransitions: []
@@ -654,3 +745,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51cab282640b715489d65e065461314d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Judgement: 0
