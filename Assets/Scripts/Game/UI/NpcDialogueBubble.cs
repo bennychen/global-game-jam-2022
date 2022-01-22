@@ -54,6 +54,7 @@ public class NpcDialogueBubble : MonoBehaviour, Prime31.IObjectInspectable
 			{
 				this._onComplete();
 			}
+			Game.GameController.Instance.DialogController.overlay.Hide();
 			this.Hide();
 		}
 	}

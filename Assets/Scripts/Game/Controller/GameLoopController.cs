@@ -177,10 +177,10 @@ namespace Game
 			LevelModel.CurrentJudgeToHeaven = toHeaven;
 
 			GameLoopStateMachine.ChangeState<CharacterLeaveState>();
-			StartCoroutine(CheckFirstGuide());
+			CheckFirstGuide();
 		}
 
-		private IEnumerator CheckFirstGuide()
+		private void CheckFirstGuide()
 		{
 
 			if (LevelModel.IsNeverUseReward && LevelModel.CurrentJudgeToHeaven)
@@ -188,8 +188,7 @@ namespace Game
 				LevelModel.IsNeverUseReward = false;
 				GameController.Instance.DialogController.TutorialDialog(
 						string.Format(GameController.Instance.ConfigData.GetDialogByKey("first_reward"),
-								LevelModel.CurrentCharacterData.Name));
-				yield return new WaitForSeconds(2);
+								LevelModel.CurrentCharacterData.Name), this.ChangeNextCharacter);
 			}
 
 			if (LevelModel.IsNeverUsePenalty && !LevelModel.CurrentJudgeToHeaven)
@@ -197,8 +196,7 @@ namespace Game
 				LevelModel.IsNeverUsePenalty = false;
 				GameController.Instance.DialogController.TutorialDialog(
 						string.Format(GameController.Instance.ConfigData.GetDialogByKey("first_penalty"),
-								LevelModel.CurrentCharacterData.Name));
-				yield return new WaitForSeconds(2);
+								LevelModel.CurrentCharacterData.Name), this.ChangeNextCharacter);
 			}
 
 			if (LevelModel.IsNeverMistake && !LevelModel.CurrentJudgeCorrect)
@@ -206,11 +204,8 @@ namespace Game
 				LevelModel.IsNeverMistake = false;
 				GameController.Instance.DialogController.TutorialDialog(
 						string.Format(GameController.Instance.ConfigData.GetDialogByKey("first_mistake"),
-								LevelModel.CurrentCharacterData.Name));
-				yield return new WaitForSeconds(2);
+								LevelModel.CurrentCharacterData.Name), this.ChangeNextCharacter);
 			}
-
-			ChangeNextCharacter();
 		}
 
 
