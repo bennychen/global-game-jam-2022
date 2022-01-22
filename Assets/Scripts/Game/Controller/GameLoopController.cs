@@ -203,6 +203,7 @@ namespace Game
 				GameController.Instance.DialogController.TutorialDialog(
 						string.Format(GameController.Instance.ConfigData.GetDialogByKey("first_reward"),
 								LevelModel.CurrentCharacterData.Name), this.ChangeNextCharacter);
+				return;
 			}
 
 			if (LevelModel.IsNeverUsePenalty && !LevelModel.CurrentJudgeToHeaven)
@@ -211,6 +212,7 @@ namespace Game
 				GameController.Instance.DialogController.TutorialDialog(
 						string.Format(GameController.Instance.ConfigData.GetDialogByKey("first_penalty"),
 								LevelModel.CurrentCharacterData.Name), this.ChangeNextCharacter);
+				return;
 			}
 
 			if (LevelModel.IsNeverMistake && !LevelModel.CurrentJudgeCorrect)
@@ -219,7 +221,10 @@ namespace Game
 				GameController.Instance.DialogController.TutorialDialog(
 						string.Format(GameController.Instance.ConfigData.GetDialogByKey("first_mistake"),
 								LevelModel.CurrentCharacterData.Name), this.ChangeNextCharacter);
+				return;
 			}
+
+			ChangeNextCharacter();
 		}
 
 		public void ChangeNextCharacter()
