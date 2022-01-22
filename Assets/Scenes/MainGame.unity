@@ -514,7 +514,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1221344703931173195, guid: c136f471a475ac642a434093b5326fb2, type: 3}
       propertyPath: m_Name
-      value: SpriteToDrag
+      value: Sheng
       objectReference: {fileID: 0}
     - target: {fileID: 1221344703931173197, guid: c136f471a475ac642a434093b5326fb2, type: 3}
       propertyPath: m_Sprite
@@ -3599,7 +3599,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148353605}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.616946, y: 5.91, z: -1.4942964}
+  m_LocalPosition: {x: -5.24, y: 5.91, z: -1.4942964}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5259,7 +5259,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1221344703931173195, guid: c136f471a475ac642a434093b5326fb2, type: 3}
       propertyPath: m_Name
-      value: SpriteToDrag (1)
+      value: Si
       objectReference: {fileID: 0}
     - target: {fileID: 1221344703931173198, guid: c136f471a475ac642a434093b5326fb2, type: 3}
       propertyPath: m_Pivot.x
