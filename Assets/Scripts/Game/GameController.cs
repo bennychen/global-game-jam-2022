@@ -26,6 +26,8 @@ namespace Game
 		public GameObject CharacterSpawn;
 		public StickFsm RewardButton;
 		public StickFsm PenaltyButton;
+		public NpcDialogueBubble NpcDialogue;
+		public NpcDialogueBubble CharacterDialogue;
 
 		public StateMachine<GameController> GameStateMachine;
 
