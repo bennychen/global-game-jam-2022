@@ -10,7 +10,6 @@ public class NpcDialogue : MonoBehaviour, Prime31.IObjectInspectable
 		foreach (var bubble in bubbles)
 		{
 			_positions.Add(bubble.transform.localPosition.y);
-			Debug.Log(bubble.transform.localPosition.y);
 		}
 		Reset();
 	}
@@ -29,7 +28,7 @@ public class NpcDialogue : MonoBehaviour, Prime31.IObjectInspectable
 	[Prime31.MakeButton]
 	public void DebugDialogue()
 	{
-		this.PopupDialogue("大人饶命啊");
+		this.PopupDialogue("大人饶命啊, 我是好人");
 	}
 
 	public void PopupDialogue(string text)
@@ -41,6 +40,14 @@ public class NpcDialogue : MonoBehaviour, Prime31.IObjectInspectable
 		}
 
 		bubble.text.text = text;
+		TextGenerator textGen = new TextGenerator();
+		TextGenerationSettings generationSettings =
+				bubble.text.GetGenerationSettings(bubble.text.rectTransform.rect.size);
+		float width = textGen.GetPreferredWidth(text, generationSettings);
+		Debug.LogWarning(width);
+		var sr = bubble.GetComponent<SpriteRenderer>();
+		sr.size = new Vector2(width / 25, sr.size.y);
+
 		bubble.transform.SetLocalPositionY(this._positions[0]);
 		bubble.gameObject.SetActive(true);
 		_usedBubbles.Insert(0, bubble);
