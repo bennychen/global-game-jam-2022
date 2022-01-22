@@ -670,7 +670,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -706,7 +706,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!61 &1221344703931173199
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -745,4 +745,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51cab282640b715489d65e065461314d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Judgement: 0
+  eJudgement: 0

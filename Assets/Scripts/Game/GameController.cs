@@ -29,6 +29,10 @@ namespace Game
 
 		public StateMachine<GameController> GameStateMachine;
 
+		public Sprite EndingBad;
+		public Sprite EndingMed;
+		public Sprite EndingGood;
+
 		protected override void OnAwake()
 		{
 			CreateController();

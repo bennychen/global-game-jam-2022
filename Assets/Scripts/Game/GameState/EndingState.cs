@@ -36,18 +36,24 @@ namespace Game
 
         private void GoodEnding()
         {
+            _context.GameEndingScene.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite =
+                GameController.Instance.EndingGood; 
             GameController.Instance.SendMessage("NpcDialog", "GoodEnding");
             Debug.LogError("GoodEnding");
         }
 
         private void EthicsEnding()
         {
+            _context.GameEndingScene.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite =
+                GameController.Instance.EndingMed; 
             GameController.Instance.SendMessage("NpcDialog", "EthicsEnding");
             Debug.LogError("EthicsEnding");
         }
 
         private void BadEnding()
         {
+            _context.GameEndingScene.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite =
+                GameController.Instance.EndingBad; 
             GameController.Instance.SendMessage("NpcDialog", "BadEnding");
             Debug.LogError("BadEnding");
         }

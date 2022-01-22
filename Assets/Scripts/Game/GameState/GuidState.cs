@@ -1,5 +1,6 @@
 ﻿
 using Codeplay;
+using UnityEngine.Video;
 
 namespace Game
 {
@@ -8,7 +9,12 @@ namespace Game
         public override void OnEnter()
         {
             base.OnEnter();
-            _context.GameGuideScene.SetActive(true);
+            var contextGameGuideScene = _context.GameGuideScene;
+            contextGameGuideScene.SetActive(true);
+            var videoPlayer = contextGameGuideScene.GetComponentInChildren<VideoPlayer>();
+            videoPlayer.Play();
+            // videoPlayer.
+            
         }
 
         public override void OnExit()
