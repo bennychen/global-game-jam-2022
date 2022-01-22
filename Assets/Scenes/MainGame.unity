@@ -712,11 +712,11 @@ RectTransform:
   - {fileID: 1160429176}
   - {fileID: 2096118474}
   - {fileID: 1922120079}
-  - {fileID: 323504910}
   - {fileID: 1213677943}
   - {fileID: 1761078862}
   - {fileID: 900144565}
   - {fileID: 717096237}
+  - {fileID: 323504910}
   m_Father: {fileID: 913764369}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1068,7 +1068,7 @@ GameObject:
   - component: {fileID: 323504912}
   - component: {fileID: 323504911}
   m_Layer: 5
-  m_Name: SummaryDialog
+  m_Name: CrimeDialog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1087,11 +1087,11 @@ RectTransform:
   m_Children:
   - {fileID: 1423754954}
   m_Father: {fileID: 268742858}
-  m_RootOrder: 5
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 391, y: 253.18402}
+  m_AnchoredPosition: {x: 391, y: -211}
   m_SizeDelta: {x: 667.999, y: 152.056}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &323504911
@@ -1147,7 +1147,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: PopupSummaryDialog
+          m_StringArgument: PopupCrimeDialog
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &323504912
@@ -1752,11 +1752,11 @@ RectTransform:
   m_Children:
   - {fileID: 384840471}
   m_Father: {fileID: 268742858}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 391, y: -210.02202}
+  m_AnchoredPosition: {x: 391, y: -102}
   m_SizeDelta: {x: 667.999, y: 152.056}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &717096238
@@ -2055,11 +2055,11 @@ RectTransform:
   m_Children:
   - {fileID: 160579869}
   m_Father: {fileID: 268742858}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 391, y: -97.38901}
+  m_AnchoredPosition: {x: 391, y: 11}
   m_SizeDelta: {x: 667.999, y: 152.056}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &900144566
@@ -2755,11 +2755,11 @@ RectTransform:
   m_Children:
   - {fileID: 2055161062}
   m_Father: {fileID: 268742858}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 391, y: 147.59103}
+  m_AnchoredPosition: {x: 391, y: 242}
   m_SizeDelta: {x: 667.999, y: 152.056}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1213677944
@@ -3378,7 +3378,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6897\u6982"
+  m_Text: "\u7F6A\u884C"
 --- !u!222 &1423754956
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4527,11 +4527,11 @@ RectTransform:
   m_Children:
   - {fileID: 1567786543}
   m_Father: {fileID: 268742858}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 391, y: 23.694002}
+  m_AnchoredPosition: {x: 391, y: 130}
   m_SizeDelta: {x: 667.999, y: 152.056}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1761078863

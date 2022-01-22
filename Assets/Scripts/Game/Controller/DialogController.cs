@@ -25,7 +25,11 @@ namespace Game
 		public void CharacterDialog(string dialog)
 		{
 			Debug.Log("CharacterDialog:" + dialog);
-			NpcDialog(dialog);
+			if (!string.IsNullOrEmpty(dialog))
+			{
+				NpcDialog(dialog);
+			}
+			
 			//GameObject.Find("TestCharDialog").GetComponent<Text>().text = dialog;
 		}
 
@@ -48,6 +52,10 @@ namespace Game
         public void PopupNumberOfKilledDialog()
         {
             CharacterDialog(GameController.Instance.GameLoopController.LevelModel.CurrentCharacterData.NumberOfKilledDialog);
+        }
+        public void PopupCrimeDialog()
+        {
+	        CharacterDialog(GameController.Instance.GameLoopController.LevelModel.CurrentCharacterData.CrimeDialog);
         }
         public void PopupRewardDialog()
         {

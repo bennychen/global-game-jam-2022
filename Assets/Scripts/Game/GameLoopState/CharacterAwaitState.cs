@@ -9,6 +9,8 @@ namespace Game
         {
             base.OnEnter();
             
+            GameController.Instance.DialogController.PopupSummaryDialog();
+            
             GameController.Instance.RewardButton.ShowStick();
             GameController.Instance.RewardButton.EnableStick();
             GameController.Instance.PenaltyButton.ShowStick();

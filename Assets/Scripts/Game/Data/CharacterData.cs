@@ -31,12 +31,13 @@ namespace Game
 		public string DeadReasonDialog;
 		public string NumberOfChildDialog;
 		public string NumberOfKilledDialog;
+		public string CrimeDialog;
 		public string RewardDialog;
 		public string PenaltyDialog;
 
 
 
-		public Sprite MainSprite;
+//		public Sprite MainSprite;
 		// public List<int> MeetRules;
 		// public int Score = 1;
 	}
