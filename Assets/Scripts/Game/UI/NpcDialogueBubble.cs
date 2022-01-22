@@ -18,7 +18,7 @@ public class NpcDialogueBubble : MonoBehaviour, Prime31.IObjectInspectable
 		text = GetComponentInChildren<UnityEngine.UI.Text>();
 	}
 
-	public void PopupWithAnim(string txt, System.Action onComplete)
+	public void PopupWithAnim(string txt, System.Action onComplete = null)
 	{
 		gameObject.SetActive(true);
 		this._onAnimComplete = onComplete;
