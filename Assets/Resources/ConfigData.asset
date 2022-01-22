@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AllCharacter:
   - Name: "\u90D1\u864E"
-    Skin: pifu01
+    Skin: zhenghu
     AgeOfDeath: 51
     DeadReason: "\u5BFF\u7EC8"
     NumberOfChild: 2
@@ -31,7 +31,7 @@ MonoBehaviour:
     RewardDialog: "\u4FFA\u53EF\u4EE5\u53BB\u6295\u80CE\u5566\uFF1F\u8C22\u5927\u4EBA\uFF01"
     PenaltyDialog: "\u8FD9\u8F88\u5B50\u6CA1\u5C11\u5BB0\u732A\u5BB0\u7F8A\uFF0C\u4FFA\u8BA4\u5566"
   - Name: "\u738B\u5148\u6797"
-    Skin: pifu02
+    Skin: wangxianlin
     AgeOfDeath: 60
     DeadReason: "\u5BFF\u7EC8"
     NumberOfChild: 532
@@ -48,7 +48,7 @@ MonoBehaviour:
     RewardDialog: "\u5982\u6B64\uFF0C\u591A\u8C22\u5927\u4EBA\u4E86\u3002"
     PenaltyDialog: "\u8FD9\u2026\u2026\u662F\u4E3A\u4E86\u6211\u5E2E\u75C5\u4EBA\u540A\u547D\u5417\uFF1F"
   - Name: "\u960E\u60EC"
-    Skin: pifu03
+    Skin: yanqie
     AgeOfDeath: 62
     DeadReason: "\u5BFF\u7EC8"
     NumberOfChild: 0

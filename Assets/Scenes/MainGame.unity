@@ -343,6 +343,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 4076246384309539589, guid: 5994f1b68fe0fb14ca70e2a3c91aff91, type: 3}
+      propertyPath: initialSkinName
+      value: lilongqing
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076246384309539590, guid: 5994f1b68fe0fb14ca70e2a3c91aff91, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4076246384309539591, guid: 5994f1b68fe0fb14ca70e2a3c91aff91, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -353,15 +361,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4076246384309539592, guid: 5994f1b68fe0fb14ca70e2a3c91aff91, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2541538
+      value: 1.3868331
       objectReference: {fileID: 0}
     - target: {fileID: 4076246384309539592, guid: 5994f1b68fe0fb14ca70e2a3c91aff91, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2541538
+      value: 1.3868331
       objectReference: {fileID: 0}
     - target: {fileID: 4076246384309539592, guid: 5994f1b68fe0fb14ca70e2a3c91aff91, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2541538
+      value: 1.3868331
       objectReference: {fileID: 0}
     - target: {fileID: 4076246384309539592, guid: 5994f1b68fe0fb14ca70e2a3c91aff91, type: 3}
       propertyPath: m_LocalPosition.x
@@ -369,7 +377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4076246384309539592, guid: 5994f1b68fe0fb14ca70e2a3c91aff91, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.56
+      value: -7.76
       objectReference: {fileID: 0}
     - target: {fileID: 4076246384309539592, guid: 5994f1b68fe0fb14ca70e2a3c91aff91, type: 3}
       propertyPath: m_LocalPosition.z
@@ -868,6 +876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcDialogue: {fileID: 0}
+  tutorialDialogue: {fileID: 0}
 --- !u!1 &282867434
 GameObject:
   m_ObjectHideFlags: 0
@@ -2103,6 +2112,8 @@ MonoBehaviour:
   - {fileID: 1146224390}
   - {fileID: 2096118475}
   - {fileID: 1922120078}
+  leftAligned: 0
+  _debugText: "\u5927\u4EBA\u9976\u547D\u554A, \u6211\u662F\u597D\u4EBA"
 --- !u!1 &776664079
 GameObject:
   m_ObjectHideFlags: 0
@@ -2967,7 +2978,6 @@ MonoBehaviour:
   RewardButton: {fileID: 1595685089}
   PenaltyButton: {fileID: 1661574300}
   HPRoot: {fileID: 303735987}
-  RuleBook: {fileID: 940591444}
 --- !u!4 &1148353607
 Transform:
   m_ObjectHideFlags: 0
@@ -2995,6 +3005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcDialogue: {fileID: 768576848}
+  tutorialDialogue: {fileID: 0}
 --- !u!1001 &1160429175
 PrefabInstance:
   m_ObjectHideFlags: 0

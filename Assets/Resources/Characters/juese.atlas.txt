@@ -1,76 +1,188 @@
 
 juese.png
-size: 1944,1944
+size: 2856,2856
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 body1
   rotate: false
-  xy: 2, 1340
+  xy: 2, 2252
   size: 843, 602
   orig: 843, 602
   offset: 0, 0
   index: -1
 body2
-  rotate: true
-  xy: 572, 41
+  rotate: false
+  xy: 1518, 1725
   size: 658, 559
   orig: 658, 559
   offset: 0, 0
   index: -1
 body3
   rotate: false
-  xy: 2, 701
+  xy: 847, 2217
   size: 669, 637
   orig: 669, 637
   offset: 0, 0
   index: -1
 body4
-  rotate: true
-  xy: 1469, 609
+  rotate: false
+  xy: 442, 740
   size: 561, 473
   orig: 561, 473
   offset: 0, 0
   index: -1
 body5
-  rotate: true
-  xy: 2, 24
+  rotate: false
+  xy: 1518, 2286
   size: 675, 568
   orig: 675, 570
   offset: 0, 2
   index: -1
 head1
-  rotate: true
-  xy: 847, 1172
+  rotate: false
+  xy: 2, 77
   size: 320, 817
   orig: 320, 817
   offset: 0, 0
   index: -1
 head2
   rotate: false
-  xy: 1133, 14
+  xy: 324, 22
   size: 334, 716
   orig: 334, 716
   offset: 0, 0
   index: -1
 head3
   rotate: true
-  xy: 847, 1494
+  xy: 687, 1767
   size: 448, 813
   orig: 448, 813
   offset: 0, 0
   index: -1
 head4
-  rotate: false
-  xy: 1469, 11
+  rotate: true
+  xy: 1917, 116
   size: 274, 596
   orig: 274, 596
   offset: 0, 0
   index: -1
 head5
-  rotate: true
-  xy: 673, 732
+  rotate: false
+  xy: 2, 896
   size: 438, 749
   orig: 439, 749
   offset: 1, 0
+  index: -1
+llq_shenti
+  rotate: true
+  xy: 2195, 2186
+  size: 668, 569
+  orig: 668, 569
+  offset: 0, 0
+  index: -1
+llq_tou
+  rotate: false
+  xy: 1287, 80
+  size: 315, 796
+  orig: 315, 796
+  offset: 0, 0
+  index: -1
+lx_shenti
+  rotate: false
+  xy: 687, 1215
+  size: 610, 550
+  orig: 610, 552
+  offset: 0, 2
+  index: -1
+lx_tou
+  rotate: false
+  xy: 1005, 473
+  size: 280, 740
+  orig: 280, 740
+  offset: 0, 0
+  index: -1
+niuer_shenti
+  rotate: true
+  xy: 2066, 643
+  size: 467, 609
+  orig: 467, 609
+  offset: 0, 0
+  index: -1
+niuer_tou
+  rotate: true
+  xy: 1917, 392
+  size: 249, 781
+  orig: 249, 781
+  offset: 0, 0
+  index: -1
+swe_shenti
+  rotate: false
+  xy: 2515, 136
+  size: 255, 254
+  orig: 264, 259
+  offset: 5, 4
+  index: -1
+swe_tou
+  rotate: false
+  xy: 1299, 1424
+  size: 161, 341
+  orig: 168, 341
+  offset: 1, 0
+  index: -1
+sxf_shenti
+  rotate: false
+  xy: 2, 1647
+  size: 683, 603
+  orig: 683, 603
+  offset: 0, 0
+  index: -1
+sxf_tou
+  rotate: false
+  xy: 1604, 104
+  size: 311, 772
+  orig: 311, 773
+  offset: 0, 1
+  index: -1
+wzr_shenti
+  rotate: false
+  xy: 2129, 1112
+  size: 586, 529
+  orig: 586, 529
+  offset: 0, 0
+  index: -1
+wzr_tou
+  rotate: true
+  xy: 1299, 878
+  size: 375, 765
+  orig: 375, 765
+  offset: 0, 0
+  index: -1
+xiuxiu_shenti
+  rotate: true
+  xy: 2178, 1643
+  size: 541, 676
+  orig: 541, 677
+  offset: 0, 0
+  index: -1
+xiuxiu_tou
+  rotate: true
+  xy: 958, 133
+  size: 338, 313
+  orig: 339, 313
+  offset: 1, 0
+  index: -1
+zhangsan_shenti
+  rotate: true
+  xy: 1462, 1255
+  size: 468, 665
+  orig: 468, 665
+  offset: 0, 0
+  index: -1
+zhangsan_tou
+  rotate: false
+  xy: 660, 21
+  size: 296, 717
+  orig: 298, 718
+  offset: 0, 1
   index: -1
