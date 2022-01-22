@@ -40,12 +40,11 @@ namespace Game
 			if (!string.IsNullOrEmpty(dialog))
 			{
 				Debug.Log("TutorialDialog:" + dialog);
-				tutorialDialogue.gameObject.SetActive(true);
-				tutorialDialogue.Popup(dialog);
+				tutorialDialogue.PopupWithAnim(dialog);
 			}
 			else
 			{
-				tutorialDialogue.gameObject.SetActive(false);
+				tutorialDialogue.Hide();
 			}
 		}
 
