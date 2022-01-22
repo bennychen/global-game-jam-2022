@@ -184,11 +184,12 @@ namespace Game
 		{
 			if (!LevelModel.CurrentJudgeToHeaven)
 			{
-				LevelModel.CurrentCharacter.FadeOut();
+				LevelModel.CurrentCharacter.DissolveOut();
 				yield return new WaitForSeconds(1.5f);
 			}
 			else
 			{
+				LevelModel.CurrentCharacter.FadeOut();
 				yield return new WaitForSeconds(1f);
 			}
 			this.CheckFirstGuide();
@@ -196,7 +197,6 @@ namespace Game
 
 		private void CheckFirstGuide()
 		{
-
 			if (LevelModel.IsNeverUseReward && LevelModel.CurrentJudgeToHeaven)
 			{
 				LevelModel.IsNeverUseReward = false;
@@ -224,6 +224,7 @@ namespace Game
 
 		public void ChangeNextCharacter()
 		{
+			Game.GameController.Instance.DialogController.npcDialogue.Reset();
 			LevelModel.CurrentCharacterIndex++;
 			if (LevelModel.CurrentCharacterIndex >= LevelModel.CurrentLevel.CharacterList.Count)
 			{

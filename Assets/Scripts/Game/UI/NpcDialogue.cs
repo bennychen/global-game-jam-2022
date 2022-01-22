@@ -18,7 +18,7 @@ public class NpcDialogue : MonoBehaviour, Prime31.IObjectInspectable
 	}
 
 	[Prime31.MakeButton]
-	private void Reset()
+	public void Reset()
 	{
 		_availableBubbles.Clear();
 		foreach (var bubble in bubbles)
