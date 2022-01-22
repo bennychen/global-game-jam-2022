@@ -18,7 +18,7 @@ public class NpcDialogue : MonoBehaviour, Prime31.IObjectInspectable
 	}
 
 	[Prime31.MakeButton]
-	private void Reset()
+	public void Reset()
 	{
 		_availableBubbles.Clear();
 		foreach (var bubble in bubbles)
@@ -51,7 +51,7 @@ public class NpcDialogue : MonoBehaviour, Prime31.IObjectInspectable
 				bubble.text.GetGenerationSettings(bubble.text.rectTransform.rect.size);
 		float width = textGen.GetPreferredWidth(text, generationSettings);
 		var sr = bubble.GetComponent<SpriteRenderer>();
-		sr.size = new Vector2(width / 30, sr.size.y);
+		sr.size = new Vector2(Mathf.Min(width / 30, 32), sr.size.y);
 		if (leftAligned)
 		{
 			bubble.transform.SetLocalPositionX(left + width / 2);

@@ -184,52 +184,6 @@ namespace Game
 		{
 			if (!LevelModel.CurrentJudgeToHeaven)
 			{
-				LevelModel.CurrentCharacter.FadeOut();
-				yield return new WaitForSeconds(1.5f);
-			}
-			else
-			{
-				yield return new WaitForSeconds(1f);
-			}
-			this.CheckFirstGuide();
-		}
-
-		private void CheckFirstGuide()
-		{
-
-			if (LevelModel.IsNeverUseReward && LevelModel.CurrentJudgeToHeaven)
-			{
-				LevelModel.IsNeverUseReward = false;
-				GameController.Instance.DialogController.TutorialDialog(
-						string.Format(GameController.Instance.ConfigData.GetDialogByKey("first_reward"),
-								LevelModel.CurrentCharacterData.Name), this.ChangeNextCharacter);
-			}
-
-			if (LevelModel.IsNeverUsePenalty && !LevelModel.CurrentJudgeToHeaven)
-			{
-				LevelModel.IsNeverUsePenalty = false;
-				GameController.Instance.DialogController.TutorialDialog(
-						string.Format(GameController.Instance.ConfigData.GetDialogByKey("first_penalty"),
-								LevelModel.CurrentCharacterData.Name), this.ChangeNextCharacter);
-			}
-
-			if (LevelModel.IsNeverMistake && !LevelModel.CurrentJudgeCorrect)
-			{
-				LevelModel.IsNeverMistake = false;
-				GameController.Instance.DialogController.TutorialDialog(
-						string.Format(GameController.Instance.ConfigData.GetDialogByKey("first_mistake"),
-								LevelModel.CurrentCharacterData.Name), this.ChangeNextCharacter);
-			}
-
-
-
-			StartCoroutine(TryChangeNextCharacter());
-		}
-
-		private IEnumerator TryChangeNextCharacter()
-		{
-			if (!LevelModel.CurrentJudgeToHeaven)
-			{
 				LevelModel.CurrentCharacter.DissolveOut();
 				yield return new WaitForSeconds(1.5f);
 			}
@@ -238,14 +192,44 @@ namespace Game
 				LevelModel.CurrentCharacter.FadeOut();
 				yield return new WaitForSeconds(1f);
 			}
-			
+			this.CheckFirstGuide();
+		}
+
+		private void CheckFirstGuide()
+		{
+			if (LevelModel.IsNeverUseReward && LevelModel.CurrentJudgeToHeaven)
+			{
+				LevelModel.IsNeverUseReward = false;
+				GameController.Instance.DialogController.TutorialDialog(
+						string.Format(GameController.Instance.ConfigData.GetDialogByKey("first_reward"),
+								LevelModel.CurrentCharacterData.Name), this.ChangeNextCharacter);
+				return;
+			}
+
+			if (LevelModel.IsNeverUsePenalty && !LevelModel.CurrentJudgeToHeaven)
+			{
+				LevelModel.IsNeverUsePenalty = false;
+				GameController.Instance.DialogController.TutorialDialog(
+						string.Format(GameController.Instance.ConfigData.GetDialogByKey("first_penalty"),
+								LevelModel.CurrentCharacterData.Name), this.ChangeNextCharacter);
+				return;
+			}
+
+			if (LevelModel.IsNeverMistake && !LevelModel.CurrentJudgeCorrect)
+			{
+				LevelModel.IsNeverMistake = false;
+				GameController.Instance.DialogController.TutorialDialog(
+						string.Format(GameController.Instance.ConfigData.GetDialogByKey("first_mistake"),
+								LevelModel.CurrentCharacterData.Name), this.ChangeNextCharacter);
+				return;
+			}
 
 			ChangeNextCharacter();
 		}
 
-
 		public void ChangeNextCharacter()
 		{
+			Game.GameController.Instance.DialogController.npcDialogue.Reset();
 			LevelModel.CurrentCharacterIndex++;
 			if (LevelModel.CurrentCharacterIndex >= LevelModel.CurrentLevel.CharacterList.Count)
 			{
