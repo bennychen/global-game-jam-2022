@@ -48,11 +48,17 @@ namespace Game
 		public void ResetDissolve()
 		{
 			GetComponent<MeshRenderer>().material.SetFloat("_DissolveAmount", 1.0f);
+			GetComponent<MeshRenderer>().material.SetFloat("_FadeOutAmount", 1.0f);
 		}
 		[Prime31.MakeButton]
 		public void FadeOut()
 		{
-			GetComponent<MeshRenderer>().material.DOFloat(1.0f, "_DissolveAmount", 1.0f);
+			GetComponent<MeshRenderer>().material.DOFloat(1.02f, "_FadeOutAmount", 1f);
+		}
+		[Prime31.MakeButton]
+		public void DissolveOut()
+		{
+			GetComponent<MeshRenderer>().material.DOFloat(1.0f, "_DissolveAmount", 1.5f);
 		}
 
 		[SerializeField]

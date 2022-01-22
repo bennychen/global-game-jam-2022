@@ -216,11 +216,12 @@ namespace Game
 		{
 			if (!LevelModel.CurrentJudgeToHeaven)
 			{
-				LevelModel.CurrentCharacter.FadeOut();
+				LevelModel.CurrentCharacter.DissolveOut();
 				yield return new WaitForSeconds(1.5f);
 			}
 			else
 			{
+				LevelModel.CurrentCharacter.FadeOut();
 				yield return new WaitForSeconds(1f);
 			}
 			
