@@ -102,7 +102,7 @@ namespace Game
 
         private void Dropping()
         {
-            if (transform.position.y >= _seaLevelY)
+            if ((transform.position - _oriPos).magnitude >= 6f)
             {
                 _fsm.SendEvent("ReleaseOut");
             }
