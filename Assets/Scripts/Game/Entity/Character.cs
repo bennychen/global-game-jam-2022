@@ -14,7 +14,7 @@ namespace Game
 
 		}
 
-		public void changeSkin(string name)
+		public void ChangeSkin(string name)
 		{
 			if (skeletonAnimation == null)
 			{
@@ -22,7 +22,26 @@ namespace Game
 			}
 			skeletonAnimation.Skeleton.SetSkin(name);
 			skeletonAnimation.Skeleton.SetSlotsToSetupPose();
+
+			if (name == "xiuxiu")
+			{
+				transform.SetLocalPositionY(-10f);
+				transform.SetLocalPositionZ(-1);
+			}
+			else
+			{
+				transform.SetLocalPositionY(-7.8f);
+				transform.SetLocalPositionZ(-0.1f);
+			}
 		}
+
+		[Prime31.MakeButton]
+		public void DebugSkin()
+		{
+			ChangeSkin(_debugSkinID);
+		}
+		[SerializeField]
+		private string _debugSkinID = "xiuxiu";
 
 		private SkeletonAnimation skeletonAnimation;
 	}

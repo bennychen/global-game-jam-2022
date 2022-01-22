@@ -40,7 +40,7 @@ namespace Game
 			var characterData = _context.LevelModel.CurrentCharacterData;
 			if (characterData != null)
 			{
-				character.changeSkin(characterData.Skin);
+				character.ChangeSkin(characterData.Skin);
 			}
 			characterGameObject.transform.SetParent(GameController.Instance.CharacterSpawn.transform);
 			return character;
