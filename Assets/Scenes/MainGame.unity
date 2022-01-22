@@ -2589,8 +2589,7 @@ MonoBehaviour:
   CharacterSpawn: {fileID: 211506547}
   RewardButton: {fileID: 1595685089}
   PenaltyButton: {fileID: 1661574300}
-  NpcDialogue: {fileID: 0}
-  CharacterDialogue: {fileID: 0}
+  HPRoot: {fileID: 303735987}
 --- !u!4 &1148353607
 Transform:
   m_ObjectHideFlags: 0
