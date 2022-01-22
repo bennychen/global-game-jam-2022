@@ -1,0 +1,644 @@
+fileFormatVersion: 2
+guid: 162d3d64256ed4bfab8c3d5925547c00
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Emo attack
+  - first:
+      213: 21300002
+    second: bantayngoai
+  - first:
+      213: 21300004
+    second: bantaytrong
+  - first:
+      213: 21300006
+    second: baptayngoai
+  - first:
+      213: 21300008
+    second: baptaysau
+  - first:
+      213: 21300010
+    second: channgoai
+  - first:
+      213: 21300012
+    second: chantrong
+  - first:
+      213: 21300014
+    second: chip
+  - first:
+      213: 21300016
+    second: chuy
+  - first:
+      213: 21300018
+    second: dau
+  - first:
+      213: 21300020
+    second: duingoai
+  - first:
+      213: 21300022
+    second: duitrong
+  - first:
+      213: 21300024
+    second: duoingua
+  - first:
+      213: 21300026
+    second: effect_slash
+  - first:
+      213: 21300028
+    second: mat die
+  - first:
+      213: 21300030
+    second: mat
+  - first:
+      213: 21300032
+    second: shadow
+  - first:
+      213: 21300034
+    second: taao
+  - first:
+      213: 21300036
+    second: tayngoai
+  - first:
+      213: 21300038
+    second: taytrong
+  - first:
+      213: 21300040
+    second: than
+  - first:
+      213: 21300042
+    second: vatngoai
+  - first:
+      213: 21300044
+    second: vattrong
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 5
+  maxTextureSize: 4096
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Emo attack
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 747
+        width: 182
+        height: 168
+      alignment: 9
+      pivot: {x: 0.37362638, y: 0.47619048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bantayngoai
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 918
+        width: 80
+        height: 68
+      alignment: 9
+      pivot: {x: 0.50625, y: 0.50735295}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bantaytrong
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 918
+        width: 74
+        height: 67
+      alignment: 9
+      pivot: {x: 0.5067568, y: 0.5074627}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: baptayngoai
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 568
+        width: 183
+        height: 178
+      alignment: 9
+      pivot: {x: 0.85519123, y: 0.71348315}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: baptaysau
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 613
+        width: 133
+        height: 194
+      alignment: 9
+      pivot: {x: 0.4849624, y: 0.685567}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: channgoai
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 873
+        width: 105
+        height: 122
+      alignment: 9
+      pivot: {x: 0.53333336, y: 0.9672131}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chantrong
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 568
+        width: 86
+        height: 119
+      alignment: 9
+      pivot: {x: 0.47674417, y: 0.789916}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chip
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 873
+        width: 215
+        height: 132
+      alignment: 9
+      pivot: {x: 0.5023256, y: 0.5037879}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chuy
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 0
+        width: 138
+        height: 612
+      alignment: 9
+      pivot: {x: 0.34461102, y: 0.24608605}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dau
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 568
+        width: 302
+        height: 349
+      alignment: 9
+      pivot: {x: 0.37582782, y: 0.13753581}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: duingoai
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 808
+        width: 133
+        height: 191
+      alignment: 9
+      pivot: {x: 0.4973054, y: 0.7480601}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: duitrong
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 334
+        width: 139
+        height: 165
+      alignment: 9
+      pivot: {x: 0.40647483, y: 0.7151515}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: duoingua
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 151
+        height: 137
+      alignment: 9
+      pivot: {x: 0.5033113, y: 0.23357664}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: effect_slash
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 916
+        height: 567
+      alignment: 9
+      pivot: {x: 0.43504366, y: 0.50352734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mat die
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 165
+        width: 177
+        height: 168
+      alignment: 9
+      pivot: {x: 0.3559322, y: 0.47619048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mat
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 0
+        width: 182
+        height: 164
+      alignment: 9
+      pivot: {x: 0.37362638, y: 0.46341464}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 918
+        width: 122
+        height: 51
+      alignment: 9
+      pivot: {x: 0.50409836, y: 0.50980395}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taao
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 0
+        width: 149
+        height: 150
+      alignment: 9
+      pivot: {x: 0.55826724, y: 0.8466667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tayngoai
+      rect:
+        serializedVersion: 2
+        x: 1688
+        y: 0
+        width: 114
+        height: 136
+      alignment: 9
+      pivot: {x: 0.65789473, y: 0.8713235}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taytrong
+      rect:
+        serializedVersion: 2
+        x: 1803
+        y: 0
+        width: 115
+        height: 118
+      alignment: 9
+      pivot: {x: 0.4, y: 0.7923729}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: than
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 568
+        width: 326
+        height: 304
+      alignment: 9
+      pivot: {x: 0.48006135, y: 0.5065789}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vatngoai
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 0
+        width: 146
+        height: 148
+      alignment: 9
+      pivot: {x: 0.2443083, y: 0.72779524}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vattrong
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 747
+        width: 83
+        height: 116
+      alignment: 9
+      pivot: {x: 0.28787196, y: 1.0223259}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4305410000000000800000000000000
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
