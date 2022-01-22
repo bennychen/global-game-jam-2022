@@ -220,29 +220,7 @@ namespace Game
 						string.Format(GameController.Instance.ConfigData.GetDialogByKey("first_mistake"),
 								LevelModel.CurrentCharacterData.Name), this.ChangeNextCharacter);
 			}
-
-
-
-			StartCoroutine(TryChangeNextCharacter());
 		}
-
-		private IEnumerator TryChangeNextCharacter()
-		{
-			if (!LevelModel.CurrentJudgeToHeaven)
-			{
-				LevelModel.CurrentCharacter.DissolveOut();
-				yield return new WaitForSeconds(1.5f);
-			}
-			else
-			{
-				LevelModel.CurrentCharacter.FadeOut();
-				yield return new WaitForSeconds(1f);
-			}
-			
-
-			ChangeNextCharacter();
-		}
-
 
 		public void ChangeNextCharacter()
 		{
