@@ -2,7 +2,7 @@
 
 namespace Game
 {
-	public class DialogController : MonoBehaviour
+	public class DialogController : MonoBehaviour, Prime31.IObjectInspectable
 	{
 		public NpcDialogue npcDialogue;
 		public NpcDialogueBubble tutorialDialogue;
@@ -41,12 +41,24 @@ namespace Game
 			{
 				Debug.Log("TutorialDialog:" + dialog);
 				tutorialDialogue.gameObject.SetActive(true);
-				tutorialDialogue.text.text = dialog;
+				tutorialDialogue.Popup(dialog);
 			}
 			else
 			{
 				tutorialDialogue.gameObject.SetActive(false);
 			}
+		}
+
+		[Prime31.MakeButton]
+		public void HideTutorial()
+		{
+			TutorialDialog("");
+		}
+
+		[Prime31.MakeButton]
+		public void DebugTutorial()
+		{
+			TutorialDialog("大人刚用了地狱签，这位李鑫将会被投入地狱，受刑后方能再次投胎做人。");
 		}
 
 		public void PopupSummaryDialog()
