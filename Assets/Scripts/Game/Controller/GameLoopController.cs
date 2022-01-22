@@ -7,6 +7,7 @@ using System.Text;
 using Codeplay;
 using Game.Model;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 namespace Game
@@ -42,7 +43,7 @@ namespace Game
 
         private void ResetHP()
         {
-            for (int i = 0; i <  GameController.Instance.HPRoot.transform.childCount; i++)
+            for (int i = 0; i < GameController.Instance.HPRoot.transform.childCount; i++)
             {
                 HPList.Add(GameController.Instance.HPRoot.transform.GetChild(i));
             }
@@ -55,10 +56,34 @@ namespace Game
 
         public void UpdateHp()
         {
-            
+
             for (int i = LevelModel.HP; i < GameController.Instance.ConfigData.DefaultHP; i++)
             {
                 HPList[i].gameObject.SetActive(false);
+            }
+        }
+
+        public void PopupRuleBook()
+        {
+            StringBuilder buff = new StringBuilder();
+            foreach (var rule in LevelModel.CurrentRule)
+            {
+                buff.Append(rule.Description);
+                buff.Append("\r\n");
+            }
+
+            var currentRule = buff.ToString();
+            GameController.Instance.RuleBook.transform.GetChild(0).GetComponent<Text>().text = currentRule;
+            GameController.Instance.RuleBook.SetActive(true);
+        }
+
+        public void CloseRuleBook()
+        {
+            GameController.Instance.RuleBook.SetActive(false);
+            if (LevelModel.IsNeedACharacter)
+            {
+                LevelModel.IsNeedACharacter = false;
+                GameLoopStateMachine.ChangeState<CharacterEnterState>();
             }
         }
 
@@ -108,13 +133,19 @@ namespace Game
         {
             CharacterData character = LevelModel.CurrentCharacterData;
             var meetRule = MeetRule(character, toHeaven);
+            LevelModel.CurrentJudgeCorrect = meetRule;
             if (meetRule)
             {
                 Debug.Log("正确");
                 LevelModel.CorrectScore++;
-                if (!toHeaven && character.Ethics == EthicsType.Evil)
+                if (toHeaven && character.Ethics == EthicsType.Evil)
                 {
-                    Debug.Log("正确但不道德");
+                    Debug.Log("坏人去天堂，秩序+1");
+                    LevelModel.CorrectButNotEthicsScore++;
+                }
+                if (!toHeaven && character.Ethics == EthicsType.Good)
+                {
+                    Debug.Log("好人去地狱，秩序+1");
                     LevelModel.CorrectButNotEthicsScore++;
                 }
             }
@@ -126,7 +157,12 @@ namespace Game
                 UpdateHp();
                 if (toHeaven && character.Ethics == EthicsType.Good)
                 {
-                    Debug.Log("错误但道德");
+                    Debug.Log("好人去天堂，道德+1");
+                    LevelModel.EthicsButMistakeScore++;
+                }
+                if (!toHeaven && character.Ethics == EthicsType.Evil)
+                {
+                    Debug.Log("坏人去地狱，道德+1");
                     LevelModel.EthicsButMistakeScore++;
                 }
                 
@@ -143,17 +179,43 @@ namespace Game
 
             LevelModel.CurrentJudgeToHeaven = toHeaven;
 
-            
             GameLoopStateMachine.ChangeState<CharacterLeaveState>();
-            StartCoroutine(AwaitToNext());
+            StartCoroutine(CheckFirstGuide());
         }
 
-        private IEnumerator AwaitToNext()
+        private IEnumerator CheckFirstGuide()
         {
-            // 动画播完之后
-            yield return new WaitForSeconds(1);
+            
+            if (LevelModel.IsNeverUseReward && LevelModel.CurrentJudgeToHeaven)
+            {
+                LevelModel.IsNeverUseReward = false;
+                GameController.Instance.DialogController.TutorialDialog(
+                    string.Format(GameController.Instance.ConfigData.GetDialogByKey("first_reward"), 
+                        LevelModel.CurrentCharacterData.Name));
+                yield return new WaitForSeconds(2);
+            }
+            
+            if (LevelModel.IsNeverUsePenalty && !LevelModel.CurrentJudgeToHeaven)
+            {
+                LevelModel.IsNeverUsePenalty = false;
+                GameController.Instance.DialogController.TutorialDialog(
+                    string.Format(GameController.Instance.ConfigData.GetDialogByKey("first_penalty"), 
+                        LevelModel.CurrentCharacterData.Name));
+                yield return new WaitForSeconds(2);
+            }
+
+            if (LevelModel.IsNeverMistake && !LevelModel.CurrentJudgeCorrect)
+            {
+                LevelModel.IsNeverMistake = false;
+                GameController.Instance.DialogController.TutorialDialog(
+                    string.Format(GameController.Instance.ConfigData.GetDialogByKey("first_mistake"), 
+                        LevelModel.CurrentCharacterData.Name));
+                yield return new WaitForSeconds(2);
+            }
+            
             ChangeNextCharacter();
         }
+
 
         public void ChangeNextCharacter()
         {
@@ -184,15 +246,8 @@ namespace Game
             {
                 return;
             }
-            StringBuilder buff = new StringBuilder();
-            foreach (var rule in LevelModel.CurrentRule)
-            {
-                buff.Append(rule.Description);
-                buff.Append("\r\n");
-            }
             
-            // simple use SendsMessage
-            GameController.Instance.SendMessage("NpcDialog", buff.ToString());
+            PopupRuleBook();
         }
 
         public void ResetRule()

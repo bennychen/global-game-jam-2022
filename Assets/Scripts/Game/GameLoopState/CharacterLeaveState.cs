@@ -1,4 +1,5 @@
 ﻿
+using System.Collections;
 using Codeplay;
 using UnityEngine;
 
@@ -22,6 +23,8 @@ namespace Game
         {
             base.OnExit();
             _context.LevelModel.CurrentCharacter.gameObject.SetActive(false);
+
         }
+
     }
 }

@@ -1,4 +1,6 @@
-﻿using Codeplay;
+﻿using System.Collections;
+using Codeplay;
+using UnityEngine;
 
 namespace Game
 {
@@ -11,6 +13,16 @@ namespace Game
             _context.LevelModel.CurrentDay = 0;
    
             _context.ResetRule();
+
+            Job.Make(AwaitToChangeState());
+
+        }
+
+        private IEnumerator AwaitToChangeState()
+        {
+            GameController.Instance.DialogController.TutorialDialog(
+                GameController.Instance.ConfigData.GetDialogByKey("first_enter_game"));
+            yield return new WaitForSeconds(2);
             _stateMachine.ChangeState<CharacterEnterState>();
         }
 

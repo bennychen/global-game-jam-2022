@@ -34,7 +34,7 @@ namespace Game
 
         
 
-        public DialogData GetDialogByKey(string key)
+        public string GetDialogByKey(string key)
         {
             if (keyToDialog == null)
             {
@@ -45,7 +45,7 @@ namespace Game
                 }
             }
 
-            return keyToDialog[key];
+            return keyToDialog[key].dialog;
         }
         private Dictionary<string, DialogData> keyToDialog;
     }

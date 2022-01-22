@@ -15,11 +15,16 @@ namespace Game.Model
         // 道德分
         public int EthicsButMistakeScore;
         public bool CurrentJudgeToHeaven;
+        public bool CurrentJudgeCorrect = true;
 
         public CharacterData CurrentCharacterData;
         public Character CurrentCharacter;
         public LevelData CurrentLevel;
         public List<RuleData> CurrentRule = new List<RuleData>();
-        
+
+        public bool IsNeverUseReward = true;
+        public bool IsNeverUsePenalty = true;
+        public bool IsNeverMistake = true;
+        public bool IsNeedACharacter = false;
     }
 }

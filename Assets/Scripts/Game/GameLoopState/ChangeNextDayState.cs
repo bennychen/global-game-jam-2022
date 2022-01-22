@@ -11,6 +11,7 @@ namespace Game
         {
             base.OnEnter();
             
+            
             _context.LevelModel.CurrentDay++;
             _context.LevelModel.CurrentCharacterIndex = 0;
             if (_context.LevelModel.CurrentDay >= GameController.Instance.ConfigData.AllLevel.Count)
@@ -19,9 +20,8 @@ namespace Game
                 return;
             }
             _context.ResetRule();
+            _context.LevelModel.IsNeedACharacter = true;
             _context.DialogCurrentRule();
-            
-            _stateMachine.ChangeState<CharacterEnterState>();
         }
 
 

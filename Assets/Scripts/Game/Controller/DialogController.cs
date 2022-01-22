@@ -33,8 +33,13 @@ namespace Game
 
 		public void TutorialDialog(string dialog)
 		{
+			if (!tutorialDialogue)
+			{
+				tutorialDialogue = FindObjectOfType<NpcDialogueBubble>(true);
+			}
 			if (!string.IsNullOrEmpty(dialog))
 			{
+				Debug.Log("TutorialDialog:" + dialog);
 				tutorialDialogue.gameObject.SetActive(true);
 				tutorialDialogue.text.text = dialog;
 			}
