@@ -10,6 +10,8 @@ namespace Game
         {
             base.OnEnter();
             
+            
+            
             if (_context.LevelModel.HP <= 0)
             {
                 GameController.Instance.GameStateMachine.ChangeState<EndingState>();

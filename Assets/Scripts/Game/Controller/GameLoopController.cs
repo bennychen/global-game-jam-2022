@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 using Codeplay;
+using DG.Tweening;
 using Game.Model;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -135,17 +136,22 @@ namespace Game
             if (toHeaven)
             {
                 GameController.Instance.SendMessage("CharacterDialog", character.RewardDialog);
+                LevelModel.CurrentCharacter.transform.DOScale(0f, 3f)
+                    .OnComplete(ChangeNextCharacter);
+                
             }
             else
             {
                 GameController.Instance.SendMessage("CharacterDialog", character.PenaltyDialog);
+                LevelModel.CurrentCharacter.transform.DOScale(0f, 3f)
+                    .OnComplete(ChangeNextCharacter);
             }
 
             LevelModel.CurrentJudgeToHeaven = toHeaven;
 
             
             GameLoopStateMachine.ChangeState<CharacterLeaveState>();
-            StartCoroutine(AwaitToNext());
+            // StartCoroutine(AwaitToNext());
         }
 
         private IEnumerator AwaitToNext()
@@ -157,6 +163,7 @@ namespace Game
 
         public void ChangeNextCharacter()
         {
+            Debug.Log("change next character");
             LevelModel.CurrentCharacterIndex++;
             if (LevelModel.CurrentCharacterIndex >= LevelModel.CurrentLevel.CharacterList.Count)
             {
