@@ -6446,7 +6446,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9161825025445717040, guid: c115850053ce7424eb94cf4907b8288d, type: 3}
       propertyPath: m_FontData.m_HorizontalOverflow
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9161825026132351338, guid: c115850053ce7424eb94cf4907b8288d, type: 3}
       propertyPath: m_RootOrder
