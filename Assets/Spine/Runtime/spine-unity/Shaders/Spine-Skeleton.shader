@@ -4,6 +4,7 @@ Shader "Spine/Skeleton" {
 		[NoScaleOffset] _MainTex ("Main Texture", 2D) = "black" {}
 		_DissolveTex ("Dissolve Texture", 2D) = "black" {}
 		_DissolveAmount ("Dissolve Amount", Range(0,1)) = 0.0
+		_FadeOutAmount ("FadeOut Amount", Range(0,1.02)) = 0.0
 		[Toggle(_STRAIGHT_ALPHA_INPUT)] _StraightAlphaInput("Straight Alpha Texture", Int) = 0
 		[HideInInspector] _StencilRef("Stencil Reference", Float) = 1.0
 		[HideInInspector][Enum(UnityEngine.Rendering.CompareFunction)] _StencilComp("Stencil Comparison", Float) = 8 // Set to Always as default
@@ -45,6 +46,7 @@ Shader "Spine/Skeleton" {
 			sampler2D _DissolveTex;
 			float4 _DissolveTex_ST;
 			float _DissolveAmount;
+			float _FadeOutAmount;
 
 			struct VertexInput {
 				float4 vertex : POSITION;
@@ -71,6 +73,7 @@ Shader "Spine/Skeleton" {
 				float4 dissolve_value = tex2D(_DissolveTex, i.uv * _DissolveTex_ST.xy + _DissolveTex_ST.zw);
 				
 				clip(dissolve_value - _DissolveAmount);
+				clip(texColor - _FadeOutAmount);
 
 				#if defined(_STRAIGHT_ALPHA_INPUT)
 				texColor.rgb *= texColor.a;
