@@ -9,13 +9,13 @@ namespace Game
         public void NpcDialog(string dialog)
         {
             Debug.Log("dialog:" + dialog);
-            GameObject.Find("TestNPCDialog").GetComponent<Text>().text = dialog;
+            //GameObject.Find("TestNPCDialog").GetComponent<Text>().text = dialog;
         }
         
         public void CharacterDialog(string dialog)
         {
             Debug.Log("dialog:" + dialog);
-            GameObject.Find("TestCharDialog").GetComponent<Text>().text = dialog;
+            //GameObject.Find("TestCharDialog").GetComponent<Text>().text = dialog;
         }
     }
 }

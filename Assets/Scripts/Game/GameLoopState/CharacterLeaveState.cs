@@ -21,7 +21,7 @@ namespace Game
         public override void OnExit()
         {
             base.OnExit();
-            GameObject.Destroy(_context.LevelModel.CurrentCharacter.gameObject);
+            _context.LevelModel.CurrentCharacter.gameObject.SetActive(false);
         }
     }
 }

@@ -26,6 +26,9 @@ namespace Game
         private Vector3 _oriScale;
 
         public Judgement Judgement;
+        
+        public Action OnDroppedOut = delegate { };
+        
         private void Awake()
         {
             _fsm = GetComponent<PlayMakerFSM>();
@@ -119,6 +122,7 @@ namespace Game
 
         private void DroppedOut()
         {
+            OnDroppedOut();
             _transformRef.DOScale(Vector3.zero, 0.7f).OnComplete(() =>
             {
                 _fsm.SendEvent("TweenFinish");

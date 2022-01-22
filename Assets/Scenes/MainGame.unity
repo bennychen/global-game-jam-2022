@@ -1845,6 +1845,8 @@ MonoBehaviour:
   GameLoopScene: {fileID: 913764368}
   GameEndingScene: {fileID: 907672308}
   CharacterSpawn: {fileID: 211506547}
+  RewardButton: {fileID: 1595685089}
+  PenaltyButton: {fileID: 1661574300}
 --- !u!4 &1148353607
 Transform:
   m_ObjectHideFlags: 0
@@ -3015,6 +3017,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570825368}
   m_CullTransparentMesh: 1
+--- !u!114 &1595685089 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1221344703931173184, guid: c136f471a475ac642a434093b5326fb2, type: 3}
+  m_PrefabInstance: {fileID: 160631756}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51cab282640b715489d65e065461314d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1645002283
 GameObject:
   m_ObjectHideFlags: 0
@@ -3129,6 +3142,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1661574300 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1221344703931173184, guid: c136f471a475ac642a434093b5326fb2, type: 3}
+  m_PrefabInstance: {fileID: 1755155468}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51cab282640b715489d65e065461314d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1730993688
 GameObject:
   m_ObjectHideFlags: 0
