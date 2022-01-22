@@ -43,7 +43,7 @@ namespace Game
 			GuideController = gameObject.AddComponent<GuideController>();
 			GameLoopController = gameObject.AddComponent<GameLoopController>();
 			PlayerController = gameObject.AddComponent<PlayerController>();
-			DialogController = gameObject.AddComponent<DialogController>();
+			DialogController = gameObject.GetComponentAndCreateIfNonExist<DialogController>();
 		}
 
 
