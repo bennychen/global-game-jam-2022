@@ -56,7 +56,11 @@ namespace Game
         public void EnableStick()
         {
             _fsm.SendEvent("DrawEnable");
-            // _fsm.SendEvent("DrawDisable");
+        }
+        
+        public void DisableStick()
+        {
+            _fsm.SendEvent("DrawDisable");
         }
         
         public void ShowStick()

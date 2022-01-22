@@ -9,6 +9,9 @@ namespace Game
     {
         public override void OnEnter()
         {
+            GameController.Instance.PenaltyButton.DisableStick();
+            GameController.Instance.RewardButton.DisableStick();
+            
             base.OnEnter();
             
             if (_context.LevelModel.HP <= 0)

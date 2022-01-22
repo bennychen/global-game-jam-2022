@@ -11,9 +11,9 @@ namespace Game
             
             GameController.Instance.DialogController.PopupSummaryDialog();
             
-            GameController.Instance.RewardButton.ShowStick();
+            // GameController.Instance.RewardButton.ShowStick();
             GameController.Instance.RewardButton.EnableStick();
-            GameController.Instance.PenaltyButton.ShowStick();
+            // GameController.Instance.PenaltyButton.ShowStick();
             GameController.Instance.PenaltyButton.EnableStick();
         }
 

@@ -14,7 +14,8 @@ namespace Game
 			_context.LevelModel.CurrentCharacterData =
 					GameController.Instance.ConfigData.AllCharacter[characterIndex];
 			_context.LevelModel.CurrentCharacter = LoadCharacter();
-
+			GameController.Instance.RewardButton.ShowStick();
+			GameController.Instance.PenaltyButton.ShowStick();
 
 			_stateMachine.ChangeState<CharacterAwaitState>();
 		}
