@@ -74,6 +74,7 @@ public class NpcDialogueBubble : MonoBehaviour, Prime31.IObjectInspectable
 				text.text = txt;
 			}
 		}
+		this._isAnimating = false;
 		yield return null;
 	}
 
