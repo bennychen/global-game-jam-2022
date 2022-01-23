@@ -23,7 +23,7 @@ namespace Game
 			}
 			else
 			{
-				if (_levelModel.EthicsButMistakeScore > GameController.Instance.ConfigData.EthicsEndingThreshold)
+				if (_levelModel.EthicsButMistakeScore >= GameController.Instance.ConfigData.EthicsEndingThreshold)
 				{
 					EthicsEnding();
 				}
