@@ -15,6 +15,8 @@ namespace Game
 			GameController.Instance.RewardButton.ShowStick();
 			GameController.Instance.PenaltyButton.ShowStick();
 
+			Camera.main.GetComponent<PlayUISound>().PlayNextPage();
+
 			_stateMachine.ChangeState<CharacterAwaitState>();
 		}
 

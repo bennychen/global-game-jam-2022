@@ -979,7 +979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5223384705226633099, guid: 183abb4c49e4f3f4b824399fa1be0af2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.35
       objectReference: {fileID: 0}
     - target: {fileID: 5223384705226633099, guid: 183abb4c49e4f3f4b824399fa1be0af2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2357,7 +2357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5223384705226633099, guid: 183abb4c49e4f3f4b824399fa1be0af2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.35
       objectReference: {fileID: 0}
     - target: {fileID: 5223384705226633099, guid: 183abb4c49e4f3f4b824399fa1be0af2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2419,7 +2419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5223384705226633099, guid: 183abb4c49e4f3f4b824399fa1be0af2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.35
       objectReference: {fileID: 0}
     - target: {fileID: 5223384705226633099, guid: 183abb4c49e4f3f4b824399fa1be0af2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3238,7 +3238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5223384705226633099, guid: 183abb4c49e4f3f4b824399fa1be0af2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.35
       objectReference: {fileID: 0}
     - target: {fileID: 5223384705226633099, guid: 183abb4c49e4f3f4b824399fa1be0af2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5687,7 +5687,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonClick: {fileID: 8300000, guid: 1586657e1c53c394faef3e375c311e06, type: 3}
-  chatter: {fileID: 8300000, guid: 4bf4e2b5dfc25ba4ca39c0e714cdfd77, type: 3}
+  nextPage: {fileID: 8300000, guid: 427ddc9deb28a5645873cdd07f8b02f8, type: 3}
+  nextDay: {fileID: 8300000, guid: f5f668434c3489948945c6628559ca9a, type: 3}
 --- !u!82 &1645002288
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7179,7 +7180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5223384705226633099, guid: 183abb4c49e4f3f4b824399fa1be0af2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.33
       objectReference: {fileID: 0}
     - target: {fileID: 5223384705226633099, guid: 183abb4c49e4f3f4b824399fa1be0af2, type: 3}
       propertyPath: m_LocalRotation.w
