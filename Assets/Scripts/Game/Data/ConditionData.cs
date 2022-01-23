@@ -17,6 +17,13 @@ namespace Game
         And,
         Or,
     }
+
+    public enum Destination
+    {
+        Heaven,
+        Hell,
+        Undefined,
+    }
     
     [Serializable]
     public class ConditionData
@@ -25,6 +32,7 @@ namespace Game
         public int NumberValue;
         public string StringValue;
         public RelationType RelationType = RelationType.And;
+        // public Destination Destination;
         
         public bool IsMeet(CharacterData characterData)
         {
@@ -47,5 +55,7 @@ namespace Game
             }
             return true;
         }
+
+
     }
 }

@@ -200,8 +200,10 @@ namespace Game
 
 		public void PlayerJudge(bool toHeaven)
 		{
+			var playerChoice = toHeaven ? Destination.Heaven : Destination.Hell;
 			CharacterData character = LevelModel.CurrentCharacterData;
-			var meetRule = MeetRule(character, !toHeaven);
+			var meetRule = MeetRule(character, playerChoice);
+			// var dest = LevelModel.CurrentRule.
 			LevelModel.CurrentJudgeCorrect = meetRule;
 			if (meetRule)
 			{
@@ -313,14 +315,14 @@ namespace Game
 			}
 		}
 
-		private bool MeetRule(CharacterData character, bool toHeaven)
+		private bool MeetRule(CharacterData character, Destination destination)
 		{
 			var result = true;
 			foreach (var currentRule in LevelModel.CurrentRule)
 			{
-				result |= currentRule.IsMeet(character);
+				result &= currentRule.MeetChoice(character, destination);
 			}
-			return result == toHeaven;
+			return result;
 		}
 
 		public void DialogCurrentRule()
