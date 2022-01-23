@@ -1,4 +1,5 @@
 ﻿
+using System;
 using Codeplay;
 using UnityEngine;
 
@@ -80,5 +81,11 @@ namespace Game
 			GameStateMachine.ChangeState<EndingState>();
 		}
 
+		
+		
+		private void Update()
+		{
+			GameStateMachine.OnUpdate(Time.deltaTime);
+		}
 	}
 }
