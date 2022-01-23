@@ -281,7 +281,7 @@ MonoBehaviour:
     RewardDialog: "\u591A\u8C22\u5927\u4EBA\uFF0C\u80FD\u4E0D\u80FD\u8BA9\u5C0F\u7684\u5728\u4E0B\u9762\u8EB2\u8EB2\u9965\u8352\u2026\u2026"
     PenaltyDialog: "\u6211\u5012\u8981\u770B\u770B\u8FD9\u5730\u5E9C\u80FD\u6BD4\u4EBA\u95F4\u5DEE\u5230\u54EA\u53BB\uFF01"
   - Name: "\u5218\u4E25\u537F"
-    Skin: liuyanqing
+    Skin: liuyanqin
     AgeOfDeath: 51
     DeadReason: "\u5BFF\u7EC8"
     NumberOfChild: 0
