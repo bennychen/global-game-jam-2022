@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 namespace Game
@@ -9,6 +11,8 @@ namespace Game
     [Serializable]
     public class ConfigData : ScriptableObject
     {
+#if UNITY_EDITOR
+        
         [MenuItem("Temp/CreateCharacterDataAsset")]
         public static void CreateMyAsset()
         {
@@ -71,6 +75,7 @@ namespace Game
             Debug.Log(currentConfig.AllCharacter);
             AssetDatabase.SaveAssets();
         }
+#endif
 
         public List<CharacterData> AllCharacter;
         public List<LevelData> AllLevel;

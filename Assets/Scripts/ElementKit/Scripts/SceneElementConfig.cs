@@ -157,15 +157,15 @@ namespace Codeplay
 		[SerializeField]
 		private string _commandHistoryFile;
 
-#if UNITY_EDITOR
-		public static CommandHistory CommandHistory { get { return _commandHistory; } }
 
+		public static CommandHistory CommandHistory { get { return _commandHistory; } }
+#if UNITY_EDITOR
 		private void FixedUpdate()
 		{
 			_commandHistory.Tick(Time.time);
 		}
-
-		private static CommandHistory _commandHistory = new CommandHistory();
 #endif
+		private static CommandHistory _commandHistory = new CommandHistory();
+
 	}
 }
