@@ -53,7 +53,10 @@ namespace Game
 
 		public void UpdateHp()
 		{
-
+			for (int i = 0; i < GameController.Instance.ConfigData.DefaultHP; i++)
+			{
+				HPList[i].gameObject.SetActive(true);
+			}
 			for (int i = LevelModel.HP; i < GameController.Instance.ConfigData.DefaultHP; i++)
 			{
 				HPList[i].gameObject.SetActive(false);
