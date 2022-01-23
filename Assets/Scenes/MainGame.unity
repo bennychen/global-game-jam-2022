@@ -2052,8 +2052,8 @@ Canvas:
   m_GameObject: {fileID: 503137124}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1645002285}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2159,7 +2159,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &525069870
 Transform:
   m_ObjectHideFlags: 0
@@ -5336,7 +5336,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 468, y: -304}
+  m_AnchoredPosition: {x: 433, y: -288}
   m_SizeDelta: {x: 427.7635, y: 128.1776}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1564116956
@@ -5930,6 +5930,9 @@ MonoBehaviour:
   buttonClick: {fileID: 8300000, guid: 1586657e1c53c394faef3e375c311e06, type: 3}
   nextPage: {fileID: 8300000, guid: 427ddc9deb28a5645873cdd07f8b02f8, type: 3}
   nextDay: {fileID: 8300000, guid: f5f668434c3489948945c6628559ca9a, type: 3}
+  endingGood: {fileID: 0}
+  endingBad: {fileID: 0}
+  endingEthics: {fileID: 0}
 --- !u!82 &1645002288
 AudioSource:
   m_ObjectHideFlags: 0
