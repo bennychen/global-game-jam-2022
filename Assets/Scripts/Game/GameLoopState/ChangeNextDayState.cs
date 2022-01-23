@@ -7,13 +7,15 @@ namespace Game
 	{
 		public override void OnEnter()
 		{
+			Debug.Log("next day state");
 			base.OnEnter();
 
 			_context.LevelModel.CurrentDay++;
 			_context.LevelModel.CurrentCharacterIndex = 0;
 			RecoverHP();
-			if (_context.LevelModel.CurrentDay >= GameController.Instance.ConfigData.AllLevel.Count)
+			if (_context.LevelModel.CurrentDay >= GameController.Instance.ConfigData.AllLevel[0].ChapterList.Count)
 			{
+				Debug.Log("AllLevelCount exceeded, going to ending state");
 				GameController.Instance.GameStateMachine.ChangeState<EndingState>();
 				return;
 			}
@@ -29,12 +31,6 @@ namespace Game
 			_context.LevelModel.HP += 2;
 			_context.LevelModel.HP = Mathf.Clamp(_context.LevelModel.HP, 0, GameController.Instance.ConfigData.DefaultHP);
 			_context.UpdateHp();
-		}
-
-
-		public override void OnExit()
-		{
-			base.OnExit();
 		}
 	}
 }
