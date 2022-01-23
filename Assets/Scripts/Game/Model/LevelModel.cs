@@ -26,5 +26,8 @@ namespace Game.Model
         public bool IsNeverUsePenalty = true;
         public bool IsNeverMistake = true;
         public bool IsNeedACharacter = false;
+        
+        public List<List<int>> CharacterList = new List<List<int>>();
     }
+    
 }

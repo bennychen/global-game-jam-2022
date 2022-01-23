@@ -11,6 +11,16 @@ namespace Game
 		Neutral,
 		Good,
 	}
+
+	public enum ConflictType
+	{
+		NaGood,
+		NaEvil,
+		Neutral,
+		EvilOrder,
+		GoodChaos,
+	}
+	
 	[Serializable]
 	public class CharacterData
 	{
@@ -21,8 +31,9 @@ namespace Game
 		public int NumberOfChild;
 		public int NumberOfKilled;
 		public string Crime;
-		// 道德评判
 		public EthicsType Ethics;
+		public int Complexity = 1;
+		public ConflictType Conflict;
 		public string Comment;
 
 

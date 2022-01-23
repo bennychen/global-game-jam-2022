@@ -9,7 +9,8 @@ namespace Game
     {
         // public int IndexIsDay = 0;
         // public int CharacterAmount = 3;
-        public List<int> CharacterList = new List<int>();
+//        public List<int> CharacterList = new List<int>();
+        public List<ChapterData> ChapterList = new List<ChapterData>();
         // <0 is random
         // public List<int> RuleIndex = new List<int>();
         

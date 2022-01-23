@@ -1,5 +1,6 @@
 ﻿using Codeplay;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Game
 {
@@ -12,6 +13,7 @@ namespace Game
 			_context.LevelModel.CurrentCharacterData =
 					GameController.Instance.ConfigData.AllCharacter[characterIndex];
 			_context.LevelModel.CurrentCharacter = LoadCharacter();
+			RefreshDeathBook();
 			GameController.Instance.RewardButton.ShowStick();
 			GameController.Instance.PenaltyButton.ShowStick();
 
@@ -20,10 +22,24 @@ namespace Game
 			_stateMachine.ChangeState<CharacterAwaitState>();
 		}
 
+		private void RefreshDeathBook()
+		{
+			var AgeOfDeathDialogGO = GameObject.Find("AgeOfDeathDialog");
+			AgeOfDeathDialogGO.transform.Find("Value").GetComponent<Text>().text = _context.LevelModel.CurrentCharacterData.AgeOfDeath.ToString();
+			var DeadReasonDialogGO = GameObject.Find("DeadReasonDialog");
+			DeadReasonDialogGO.transform.Find("Value").GetComponent<Text>().text = _context.LevelModel.CurrentCharacterData.DeadReason;
+			var NumberOfChildDialogGO = GameObject.Find("NumberOfChildDialog");
+			NumberOfChildDialogGO.transform.Find("Value").GetComponent<Text>().text = _context.LevelModel.CurrentCharacterData.NumberOfChild.ToString();
+			var NumberOfKilledDialogGO = GameObject.Find("NumberOfKilledDialog");
+			NumberOfKilledDialogGO.transform.Find("Value").GetComponent<Text>().text = _context.LevelModel.CurrentCharacterData.NumberOfKilled.ToString();
+			var CrimeDialogGO = GameObject.Find("CrimeDialog");
+			CrimeDialogGO.transform.Find("Value").GetComponent<Text>().text = _context.LevelModel.CurrentCharacterData.Crime;
+		}
+
 		private int PickCharacter()
 		{
 			//Debug.Log("index:" + _context.LevelModel.CurrentCharacterIndex + " count:" + _context.LevelModel.CurrentLevel.CharacterList.Count);
-			return _context.LevelModel.CurrentLevel.CharacterList[_context.LevelModel.CurrentCharacterIndex];
+			return _context.LevelModel.CharacterList[_context.LevelModel.CurrentDay][_context.LevelModel.CurrentCharacterIndex];
 		}
 
 		private Character LoadCharacter()

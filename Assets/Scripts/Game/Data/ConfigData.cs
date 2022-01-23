@@ -37,7 +37,8 @@ namespace Game
                 var configdata= new CharacterData();
                 configdata.Name = data[1];
                 configdata.Skin = data[2];
-                //缺了俩待更新
+                if(int.TryParse(data[3], out configdata.Complexity)==false) parseErrors+=1;
+                if(Enum.TryParse(data[4], out configdata.Conflict)==false) parseErrors+=1;;
                 if(int.TryParse(data[5], out configdata.AgeOfDeath)==false) parseErrors+=1;
                 configdata.DeadReason = data[6];
                 if(int.TryParse(data[7], out configdata.NumberOfChild)==false) parseErrors+=1;
@@ -68,6 +69,7 @@ namespace Game
 //                Debug.Log(sb); // what you get is split sequential data that is column-first, then row
             }
             Debug.Log(currentConfig.AllCharacter);
+            AssetDatabase.SaveAssets();
         }
 
         public List<CharacterData> AllCharacter;

@@ -20,6 +20,10 @@ namespace Game
 		private void Awake()
 		{
 			CreateGameStateMachine();
+			ResetLevelModel();
+			RegisterEvent();
+			ResetHP();
+			
 		}
 
 		public void CreateGameStateMachine()
@@ -30,12 +34,7 @@ namespace Game
 			GameLoopStateMachine.AddState(new CharacterAwaitState());
 			GameLoopStateMachine.AddState(new CharacterLeaveState());
 			GameLoopStateMachine.AddState(new ChangeNextDayState());
-
-			//ChangeToFirstEnterGame();
-			ResetLevelModel();
-			RegisterEvent();
-			ResetHP();
-			// GameStateMachine.OnStateChanged += OnGameStateChanged;
+			
 		}
 
 		private void ResetHP()
@@ -93,7 +92,79 @@ namespace Game
 		private void ResetLevelModel()
 		{
 			LevelModel.HP = GameController.Instance.ConfigData.DefaultHP;
+			GenerateCharacterList();
+		}
 
+		private void GenerateCharacterList()
+		{
+			//CharacterList
+			/**
+			 * A组-Complexity==1
+				B组-Complexity==2 AND Conflict==Neutral
+				C组-Complexity==2 AND （Conflict==GoodChaos OR Conflict==EvilOrder）
+			 */
+			var configData = GameController.Instance.ConfigData;
+			List<int> groupA = new List<int>();
+			List<int> groupB = new List<int>();
+			List<int> groupC = new List<int>();
+			for (int i = 0; i < configData.AllCharacter.Count; i++)
+			{
+				var characterData = configData.AllCharacter[i];
+				if (characterData.Complexity == 1)
+				{
+					groupA.Add(i);
+				}
+				else if (characterData.Complexity == 2 && characterData.Conflict == ConflictType.Neutral)
+				{
+					groupB.Add(i);
+				}
+				else if (characterData.Complexity == 2 && (characterData.Conflict == ConflictType.GoodChaos || characterData.Conflict == ConflictType.EvilOrder))
+				{
+					groupC.Add(i);
+				}
+			}
+			
+			LevelModel.CharacterList.Clear();
+			foreach (var levelData in configData.AllLevel)
+			{
+				for (int i = 0; i < levelData.ChapterList.Count; i++)
+				{
+					var chapterData = levelData.ChapterList[i];
+					LevelModel.CharacterList.Add(new List<int>());
+					foreach (var groupData in chapterData.groupList)
+					{
+						if (groupData.Group == GroupType.A)
+						{
+							for (int j = 0; j < groupData.characterAmount; j++)
+							{
+								int randomIndex = Random.Range(0, groupA.Count);
+								LevelModel.CharacterList[i].Add(groupA[randomIndex]);
+								groupA.RemoveAt(randomIndex);
+							}
+						}
+						else if (groupData.Group == GroupType.B)
+						{
+							for (int j = 0; j < groupData.characterAmount; j++)
+							{
+								int randomIndex = Random.Range(0, groupB.Count);
+								LevelModel.CharacterList[i].Add(groupB[randomIndex]);
+								groupB.RemoveAt(randomIndex);
+							}
+						}
+						else if (groupData.Group == GroupType.C)
+						{
+							for (int j = 0; j < groupData.characterAmount; j++)
+							{
+								int randomIndex = Random.Range(0, groupC.Count);
+								LevelModel.CharacterList[i].Add(groupC[randomIndex]);
+								groupC.RemoveAt(randomIndex);
+							}
+						}
+					}
+					LevelModel.CharacterList[i].Sort((a, b)=> 1 - 2 * Random.Range(0, 1));
+					Debug.Log("day:"+i + "  character count:" + LevelModel.CharacterList[i].Count);
+				}
+			}
 		}
 
 		public void ChangeToFirstEnterGame()
@@ -129,7 +200,7 @@ namespace Game
 		public void PlayerJudge(bool toHeaven)
 		{
 			CharacterData character = LevelModel.CurrentCharacterData;
-			var meetRule = MeetRule(character, toHeaven);
+			var meetRule = MeetRule(character, !toHeaven);
 			LevelModel.CurrentJudgeCorrect = meetRule;
 			if (meetRule)
 			{
@@ -231,7 +302,7 @@ namespace Game
 		{
 			Game.GameController.Instance.DialogController.npcDialogue.Reset();
 			LevelModel.CurrentCharacterIndex++;
-			if (LevelModel.CurrentCharacterIndex >= LevelModel.CurrentLevel.CharacterList.Count)
+			if (LevelModel.CurrentCharacterIndex >= LevelModel.CharacterList[LevelModel.CurrentDay].Count)
 			{
 				GameLoopStateMachine.ChangeState<ChangeNextDayState>();
 			}
@@ -246,7 +317,7 @@ namespace Game
 			var result = true;
 			foreach (var currentRule in LevelModel.CurrentRule)
 			{
-				result &= currentRule.IsMeet(character);
+				result |= currentRule.IsMeet(character);
 			}
 			return result == toHeaven;
 		}
