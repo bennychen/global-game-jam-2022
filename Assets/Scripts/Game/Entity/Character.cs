@@ -1,5 +1,4 @@
 ﻿
-using System;
 using System.Collections;
 using DG.Tweening;
 using Spine.Unity;
@@ -34,6 +33,16 @@ namespace Game
 			{
 				transform.SetLocalPositionY(-10f);
 				transform.SetLocalPositionZ(-1);
+			}
+			else if (name == "yeweiyang")
+			{
+				transform.SetLocalPositionY(-10.5f);
+				transform.SetLocalPositionZ(-0.1f);
+			}
+			else if (name == "limingji")
+			{
+				transform.SetLocalPositionY(-9.5f);
+				transform.SetLocalPositionZ(-0.1f);
 			}
 			else
 			{
