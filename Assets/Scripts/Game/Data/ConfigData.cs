@@ -72,7 +72,7 @@ namespace Game
 //                }
 //                Debug.Log(sb); // what you get is split sequential data that is column-first, then row
             }
-            Debug.Log(currentConfig.AllCharacter);
+            Debug.Log(currentConfig.AllCharacter.Count);
             AssetDatabase.SaveAssets();
         }
 #endif

@@ -11,6 +11,7 @@ namespace Game
 
 			_context.LevelModel.CurrentDay++;
 			_context.LevelModel.CurrentCharacterIndex = 0;
+			RecoverHP();
 			if (_context.LevelModel.CurrentDay >= GameController.Instance.ConfigData.AllLevel.Count)
 			{
 				GameController.Instance.GameStateMachine.ChangeState<EndingState>();
@@ -21,6 +22,13 @@ namespace Game
 			_context.DialogCurrentRule();
 
 			Camera.main.GetComponent<PlayUISound>().PlayNextDay();
+		}
+
+		private void RecoverHP()
+		{
+			_context.LevelModel.HP += 2;
+			_context.LevelModel.HP = Mathf.Clamp(_context.LevelModel.HP, 0, GameController.Instance.ConfigData.DefaultHP);
+			_context.UpdateHp();
 		}
 
 
