@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections;
 using DG.Tweening;
 using Spine.Unity;
 using UnityEngine;
@@ -8,7 +9,10 @@ namespace Game
 {
 	public class Character : MonoBehaviour, Prime31.IObjectInspectable
 	{
-		
+		public AudioClip chatter;
+		public AudioClip heavenAudio;
+		public AudioClip hellAudio;
+
 		//move
 		//speak
 		[Prime31.MakeButton]
@@ -39,6 +43,47 @@ namespace Game
 		}
 
 		[Prime31.MakeButton]
+		public void PlayHellSound()
+		{
+			var source = this.GetComponent<AudioSource>();
+			if (source.isPlaying)
+			{
+				source.Stop();
+			}
+			source.clip = hellAudio;
+			source.Play();
+		}
+
+		[Prime31.MakeButton]
+		public void PlayHeavenSound()
+		{
+			var source = this.GetComponent<AudioSource>();
+			if (source.isPlaying)
+			{
+				source.Stop();
+			}
+			source.clip = heavenAudio;
+			source.Play();
+		}
+
+		public void PlayChatter(int duration)
+		{
+			StopCoroutine("PlayChatterCoroutine");
+			var source = this.GetComponent<AudioSource>();
+			source.clip = chatter;
+			source.loop = true;
+			source.Play();
+			StartCoroutine(PlayChatterCoroutine(duration));
+		}
+
+		private IEnumerator PlayChatterCoroutine(int duration)
+		{
+			yield return new WaitForSeconds(duration);
+			this.GetComponent<AudioSource>().Stop();
+		}
+
+
+		[Prime31.MakeButton]
 		public void DebugSkin()
 		{
 			ChangeSkin(_debugSkinID);
@@ -53,11 +98,13 @@ namespace Game
 		[Prime31.MakeButton]
 		public void FadeOut()
 		{
+			PlayHeavenSound();
 			GetComponent<MeshRenderer>().material.DOFloat(1.02f, "_FadeOutAmount", 1f);
 		}
 		[Prime31.MakeButton]
 		public void DissolveOut()
 		{
+			PlayHellSound();
 			GetComponent<MeshRenderer>().material.DOFloat(1.0f, "_DissolveAmount", 1.5f);
 		}
 
