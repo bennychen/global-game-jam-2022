@@ -2,6 +2,7 @@
 using Codeplay;
 using Game.Model;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Game
 {
@@ -38,8 +39,9 @@ namespace Game
 		{
 			_context.GameEndingScene.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite =
 					GameController.Instance.EndingGood;
-			GameController.Instance.SendMessage("NpcDialog", "GoodEnding");
-			Debug.LogError("GoodEnding");
+			_context.GameEndingScene.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = 
+				"于是 你成功完成了大老爷的任务\r\n顺利转世投胎去了";
+			
 			Camera.main.GetComponent<PlayUISound>().PlayGoodEnding();
 		}
 
@@ -47,8 +49,8 @@ namespace Game
 		{
 			_context.GameEndingScene.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite =
 					GameController.Instance.EndingMed;
-			GameController.Instance.SendMessage("NpcDialog", "EthicsEnding");
-			Debug.LogError("EthicsEnding");
+			_context.GameEndingScene.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = 
+				"你成功的完成了大老爷的任务\r\n可以转世投胎了\r\n此外 大老爷似乎给你留了一封信";
 			Camera.main.GetComponent<PlayUISound>().PlayEthicsEnding();
 		}
 
@@ -56,8 +58,8 @@ namespace Game
 		{
 			_context.GameEndingScene.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite =
 					GameController.Instance.EndingBad;
-			GameController.Instance.SendMessage("NpcDialog", "BadEnding");
-			Debug.LogError("BadEnding");
+			_context.GameEndingScene.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = 
+				"你没能完成大老爷的嘱托\r\n下狱受罚去了";
 			Camera.main.GetComponent<PlayUISound>().PlayBadEnding();
 		}
 
