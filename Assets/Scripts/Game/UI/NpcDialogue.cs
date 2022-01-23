@@ -55,9 +55,9 @@ public class NpcDialogue : MonoBehaviour, Prime31.IObjectInspectable
 		WorldUnitsInCamera.y = Camera.main.orthographicSize * 2;
 		WorldUnitsInCamera.x = WorldUnitsInCamera.y * Screen.width / Screen.height;
 		var pixelToWorldAmountx = WorldUnitsInCamera.x / Screen.width;
-		var sizeX = width * pixelToWorldAmountx + 2;
+		var sizeX = width * pixelToWorldAmountx + 4;
 		// Debug.Log(pixelToWorldAmountx + "," + sizeX);
-		sr.size = new Vector2(Mathf.Min(sizeX, 30), sr.size.y);
+		sr.size = new Vector2(Mathf.Min(sizeX, 34), sr.size.y);
 		if (leftAligned)
 		{
 			bubble.transform.SetLocalPositionX(left + width / 2);
