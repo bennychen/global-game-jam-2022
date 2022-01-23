@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -62,7 +63,6 @@ public class NpcDialogue : MonoBehaviour, Prime31.IObjectInspectable
 		{
 			bubble.transform.SetLocalPositionX(left + width / 2);
 		}
-
 		bubble.transform.SetLocalPositionY(this._positions[0]);
 		bubble.gameObject.SetActive(true);
 		_usedBubbles.Insert(0, bubble);
@@ -71,6 +71,9 @@ public class NpcDialogue : MonoBehaviour, Prime31.IObjectInspectable
 			recycleBubble(_usedBubbles[_usedBubbles.Count - 1]);
 			_usedBubbles.RemoveAt(_usedBubbles.Count - 1);
 		}
+
+		var uiSound = Camera.main.GetComponent<PlayUISound>();
+		uiSound.PlayChatter(bubble.text.text.Length / 5);
 	}
 
 	public void Update()
