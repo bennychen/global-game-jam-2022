@@ -81,8 +81,13 @@ namespace Game
 			GameStateMachine.ChangeState<EndingState>();
 		}
 
-		
-		
+		public void ChangeToCredits()
+		{
+			UnityEngine.SceneManagement.SceneManager.LoadScene("Credits",
+					UnityEngine.SceneManagement.LoadSceneMode.Single);
+		}
+
+
 		private void Update()
 		{
 			GameStateMachine.OnUpdate(Time.deltaTime);
