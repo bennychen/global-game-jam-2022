@@ -349,7 +349,7 @@ namespace Game
 			}
 			if (LevelModel.CurrentDay > 0)
 			{
-				var randomIndex = Random.Range(0, GameController.Instance.ConfigData.AllRule.Count);
+				var randomIndex = Random.Range(2, GameController.Instance.ConfigData.AllRule.Count);
 				LevelModel.CurrentRule.Add(GameController.Instance.ConfigData.AllRule[randomIndex]);
 			}
 
