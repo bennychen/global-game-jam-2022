@@ -337,8 +337,8 @@ namespace Game
 
 		public void ResetRule()
 		{
-			LevelModel.CurrentLevel =
-					GameController.Instance.ConfigData.AllLevel[LevelModel.CurrentDay];
+			// LevelModel.CurrentLevel =
+					// GameController.Instance.ConfigData.AllLevel[LevelModel.CurrentDay];
 			LevelModel.CurrentRule.Clear();
 			foreach (var ruleID in GameController.Instance.ConfigData.DefaultRule)
 			{
