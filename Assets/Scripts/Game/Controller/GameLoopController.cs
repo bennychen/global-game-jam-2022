@@ -16,6 +16,7 @@ namespace Game
 		public LevelModel LevelModel = new LevelModel();
 
 		public List<Transform> HPList = new List<Transform>();
+		private int _randomIndexDay1;
 
 		private void Awake()
 		{
@@ -347,10 +348,27 @@ namespace Game
 					}
 				}
 			}
-			if (LevelModel.CurrentDay > 0)
+			if (LevelModel.CurrentDay == 1)
 			{
-				var randomIndex = Random.Range(2, GameController.Instance.ConfigData.AllRule.Count);
-				LevelModel.CurrentRule.Add(GameController.Instance.ConfigData.AllRule[randomIndex]);
+				_randomIndexDay1 = Random.Range(2, GameController.Instance.ConfigData.AllRule.Count);
+				LevelModel.CurrentRule.Add(GameController.Instance.ConfigData.AllRule[_randomIndexDay1]);
+			}
+
+			int randomIndexDay2 = -1;
+			if (LevelModel.CurrentDay == 2)
+			{
+				var bFound = false;
+				while (!bFound)
+				{
+					randomIndexDay2 = Random.Range(2, GameController.Instance.ConfigData.AllRule.Count);
+					if (randomIndexDay2 != _randomIndexDay1)
+					{
+						bFound = true;
+					}
+				}
+
+				if (randomIndexDay2 >= 0 && GameController.Instance.ConfigData.AllRule.Count > randomIndexDay2)
+					LevelModel.CurrentRule.Add(GameController.Instance.ConfigData.AllRule[randomIndexDay2]);
 			}
 
 			foreach (var rule in LevelModel.CurrentRule)
