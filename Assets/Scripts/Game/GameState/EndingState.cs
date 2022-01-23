@@ -50,7 +50,7 @@ namespace Game
 			_context.GameEndingScene.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite =
 					GameController.Instance.EndingMed;
 			_context.GameEndingScene.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = 
-				"你成功的完成了大老爷的任务\r\n可以转世投胎了\r\n此外 大老爷似乎给你留了一封信";
+				"Tada~你达到了这个游戏的真结局！恭喜你！\r\n并没有什么大老爷，这是我们为打到这里的有缘人留下的一封信。\r\n二元对立的方法解决问题看起来简单有效，可一旦问题变得复杂，\r\n做出决断的过程就会变得非常折磨人。\r\n然而不管问题多么复杂，在生活中我们迫于形势，\r\n却不得不常常这么做。\r\n这种折磨和苦恼正是我们想通过这个游戏表达的东西，\r\n如果我们成功用这个游戏把烦恼也带给了你，对不起！\r\n";
 			Camera.main.GetComponent<PlayUISound>().PlayEthicsEnding();
 		}
 
