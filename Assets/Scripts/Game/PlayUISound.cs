@@ -18,20 +18,5 @@ public class PlayUISound : MonoBehaviour
 		this._source.Play();
 	}
 
-	public void PlayChatter(int duration)
-	{
-		StopCoroutine("PlayChatterCoroutine");
-		this._source.clip = chatter;
-		this._source.loop = true;
-		this._source.Play();
-		StartCoroutine(PlayChatterCoroutine(duration));
-	}
-
-	private IEnumerator PlayChatterCoroutine(int duration)
-	{
-		yield return new WaitForSeconds(duration);
-		this._source.Stop();
-	}
-
 	private AudioSource _source;
 }

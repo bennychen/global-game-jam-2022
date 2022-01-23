@@ -1,7 +1,5 @@
-﻿
-using Codeplay;
+﻿using Codeplay;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Game
 {

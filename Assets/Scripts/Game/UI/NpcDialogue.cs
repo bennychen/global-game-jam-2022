@@ -73,7 +73,9 @@ public class NpcDialogue : MonoBehaviour, Prime31.IObjectInspectable
 		}
 
 		var uiSound = Camera.main.GetComponent<PlayUISound>();
-		uiSound.PlayChatter(bubble.text.text.Length / 5);
+		Game.GameController.Instance.
+			GameLoopController.LevelModel.CurrentCharacter.
+				PlayChatter(bubble.text.text.Length / 5);
 	}
 
 	public void Update()
