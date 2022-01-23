@@ -1,4 +1,5 @@
 ﻿using Codeplay;
+using DG.Tweening;
 using UnityEngine;
 
 namespace Game
@@ -10,6 +11,32 @@ namespace Game
 			Debug.Log("next day state");
 			base.OnEnter();
 
+			Camera.main.GetComponent<PlayUISound>().PlayNextDay();
+			
+			GameController.Instance.DialogController.TutorialDialog(
+				string.Format(GameController.Instance.ConfigData.GetDialogByKey("before_rule_change"),
+					_context.LevelModel.CurrentCharacterData.Name), this.ChangeToNight);
+		}
+
+		private void ChangeToNight()
+		{
+			var sequence = DG.Tweening.DOTween.Sequence();
+			sequence.Append(GameController.Instance.NightMask.DOFade(1.0f, 0.5f));
+			sequence.AppendInterval(1f);
+			sequence.Append(GameController.Instance.NightMask.DOFade(0f, 0.5f));
+			sequence.onComplete += AfterChangeDay;
+			sequence.Play();
+		}
+
+		private void AfterChangeDay()
+		{
+			GameController.Instance.DialogController.TutorialDialog(
+				string.Format(GameController.Instance.ConfigData.GetDialogByKey("rule_change"),
+					_context.LevelModel.CurrentCharacterData.Name), this.ChangeDay);
+		}
+
+		private void ChangeDay()
+		{
 			_context.LevelModel.CurrentDay++;
 			_context.LevelModel.CurrentCharacterIndex = 0;
 			RecoverHP();
@@ -22,8 +49,6 @@ namespace Game
 			_context.ResetRule();
 			_context.LevelModel.IsNeedACharacter = true;
 			_context.DialogCurrentRule();
-
-			Camera.main.GetComponent<PlayUISound>().PlayNextDay();
 		}
 
 		private void RecoverHP()

@@ -2,6 +2,7 @@
 using System;
 using Codeplay;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Game
 {
@@ -27,6 +28,7 @@ namespace Game
 		public StickFsm PenaltyButton;
 		public GameObject HPRoot;
 		public GameObject RuleBook;
+		public Image NightMask;
 
 		public StateMachine<GameController> GameStateMachine;
 
