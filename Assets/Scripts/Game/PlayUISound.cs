@@ -1,10 +1,10 @@
-using System.Collections;
 using UnityEngine;
 
 public class PlayUISound : MonoBehaviour
 {
 	public AudioClip buttonClick;
-	public AudioClip chatter;
+	public AudioClip nextPage;
+	public AudioClip nextDay;
 
 	public void Awake()
 	{
@@ -14,6 +14,20 @@ public class PlayUISound : MonoBehaviour
 	public void PlayButtonClick()
 	{
 		this._source.clip = buttonClick;
+		this._source.loop = false;
+		this._source.Play();
+	}
+
+	public void PlayNextPage()
+	{
+		this._source.clip = nextPage;
+		this._source.loop = false;
+		this._source.Play();
+	}
+
+	public void PlayNextDay()
+	{
+		this._source.clip = nextDay;
 		this._source.loop = false;
 		this._source.Play();
 	}
